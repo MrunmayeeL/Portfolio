@@ -39,34 +39,34 @@ function About() {
           </div>
 
           <div className="about-side-card paper-card">
-            <h3>Key Directives</h3>
+            <h3>My compass</h3>
             <div className="directives-list">
               <div className="directive-item">
                 <span className="directive-num">01</span>
                 <div>
-                  <h5>System Autonomy</h5>
-                  <p>Developing ROS/MAVLink controllers for multi-agent drone swarms.</p>
+                  <h5>See It Through</h5>
+                  <p>If I start it, I owe it my best shot. Starting is easy. Stay when it gets difficult.</p>
                 </div>
               </div>
               <div className="directive-item">
                 <span className="directive-num">02</span>
                 <div>
-                  <h5>Scalable AI Inference</h5>
-                  <p>Optimizing YOLO and LLM pipelines on dockerized cloud clusters.</p>
+                  <h5>Keep Exploring</h5>
+                  <p>The next interesting thing might be somewhere I haven't looked yet.</p>
                 </div>
               </div>
               <div className="directive-item">
                 <span className="directive-num">03</span>
                 <div>
-                  <h5>Enterprise Reliability</h5>
-                  <p>Writing robust Java/Spring Boot microservices with telemetry logging.</p>
+                  <h5>Go the Extra Mile</h5>
+                  <p>Don't just meet the bar. Do more than what is expected.That is where good becomes better</p>
                 </div>
               </div>
               <div className="directive-item">
                 <span className="directive-num">04</span>
                 <div>
-                  <h5>Academic Rigor</h5>
-                  <p>Formulating mathematical path optimizations and publishing peer-reviewed research.</p>
+                  <h5>Chase the Failure</h5>
+                  <p>The hardest problems often have the most to teach. Don't walk away from them , grow with them.</p>
                 </div>
               </div>
             </div>
