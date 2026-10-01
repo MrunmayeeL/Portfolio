@@ -6,13 +6,13 @@ function About() {
     <section className="about-section-new" id="about">
       <div className="container">
         <h2 className="section-title">About Me</h2>
-        <p className="section-subtitle">Building software projects across backend engineering, full-stack web, computer vision, and autonomous systems.</p>
+        <p className="section-subtitle">Where Curiosity leads,Engineering follows. I'm curious enough to explore and driven enough to build.</p>
 
         <div className="about-grid">
           <div className="about-main paper-card">
             <div className="about-icon-header">
               <InfoIcon className="info-icon" />
-              <h3>The Narrative</h3>
+              <h3>Behind the Code</h3>
             </div>
             
             <div className="about-text-content">

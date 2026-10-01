@@ -39,7 +39,7 @@ function Highlights() {
     {
       number: "AIR 5401",
       label: "JEE Mains Rank",
-      sublabel: "Top 0.5% nationally among ~1M candidates",
+      sublabel: "Top 0.5% nationally",
       icon: <EmojiEventsIcon fontSize="medium" />,
       accent: "var(--accent-primary)"
     },
@@ -53,7 +53,7 @@ function Highlights() {
     {
       number: "4",
       label: "Research Papers",
-      sublabel: "IEEE BigData • CVIP 2026 • ASME IMECE • ICAMMS",
+      sublabel: "IEEE BigData • CVIP • ASME IMECE • ICAMMS",
       icon: <ArticleIcon fontSize="medium" />,
       accent: "var(--accent-highlight)"
     }

@@ -6,11 +6,14 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const TYPING_WORDS = [
-  "Software Engineering",
-  "Full-Stack & Backend",
-  "Data Structures & Algorithms",
-  "Computer Vision & AI",
-  "Autonomous Systems"
+  "Backend development",
+  "Full-Stack engineering",
+  "system design",
+  "Agentic AI",
+  "Computer Vision",
+  "Autonomous Systems",
+  "Robotics",
+  "drones"
 ];
 
 function Main() {
@@ -84,7 +87,7 @@ function Main() {
         <div className="hero-content">
           <div className="hero-top-badge">
             <span className="pulse-dot"></span>
-            <span>B.Tech CSE @ VNIT Nagpur (AIR 5401 JEE Mains)</span>
+            <span>B.Tech CSE @ VNIT Nagpur (Open to Internships & Full-Time Opportunities)</span>
           </div>
           
           <h1 className="hero-name">Mrunmayee Limaye</h1>
@@ -92,17 +95,17 @@ function Main() {
           <h2 className="hero-title">
             Computer Science Undergraduate at VNIT Nagpur
             <div className="typing-container">
-              <span>Focusing on </span>
+              <span>Working on </span>
               <span className="typing-text">{currentText}</span>
               <span className="typing-cursor">|</span>
             </div>
           </h2>
 
           <p className="hero-bio">
-            I build practical software applications and intelligent systems. My work spans 
-            <strong> Full-Stack & Backend Development (Spring Boot, Oracle/PostgreSQL, REST APIs)</strong>, 
-            <strong> Computer Vision (OpenCV, YOLO, OCR)</strong>, and <strong>Autonomous Systems</strong>. 
-            I enjoy taking on complex engineering challenges and writing clean, reliable code.
+            I build software applications and intelligent systems. My work spans across
+            <strong> Full-Stack & Backend Development (Spring Boot, Oracle/PostgreSQL, REST APIs)</strong>, <strong>Multi-agentic AI systems</strong>
+            ,<strong> Computer Vision </strong>, and <strong>Autonomous Robotic Systems</strong>. 
+            I enjoy coding and want to keep exploring the limits of what I can build.
           </p>
 
           <div className="hero-buttons">
@@ -433,4 +436,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Main;
