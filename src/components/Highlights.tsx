@@ -1,9 +1,8 @@
 import React from "react";
 import SchoolIcon from '@mui/icons-material/School';
 import EngineeringIcon from '@mui/icons-material/Engineering';
-import ScienceIcon from '@mui/icons-material/Science';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ArticleIcon from '@mui/icons-material/Article';
-import HubIcon from '@mui/icons-material/Hub';
 
 interface StatCardProps {
   number: string;
@@ -31,32 +30,32 @@ function StatCard({ number, label, sublabel, icon, accent }: StatCardProps) {
 function Highlights() {
   const highlights = [
     {
+      number: "8.70",
+      label: "CGPA (VNIT Nagpur)",
+      sublabel: "B.Tech in Computer Science & Engineering",
+      icon: <SchoolIcon fontSize="medium" />,
+      accent: "var(--accent-secondary)"
+    },
+    {
+      number: "AIR 5401",
+      label: "JEE Mains Rank",
+      sublabel: "Top 0.5% nationally among ~1M candidates",
+      icon: <EmojiEventsIcon fontSize="medium" />,
+      accent: "var(--accent-primary)"
+    },
+    {
       number: "3",
       label: "Internships",
       sublabel: "NatWest Group • IIT Roorkee • IvLabs",
       icon: <EngineeringIcon fontSize="medium" />,
-      accent: "var(--accent-primary)"
-    },
-    {
-      number: "2",
-      label: "Research Labs",
-      sublabel: "IvLabs Robotics • IITR Autonomous Systems",
-      icon: <HubIcon fontSize="medium" />,
       accent: "var(--accent-support)"
     },
     {
-      number: "3",
-      label: "Publications",
-      sublabel: "1 IEEE Big Data • 2 accepted in-press",
+      number: "4",
+      label: "Research Papers",
+      sublabel: "IEEE BigData • CVIP 2026 • ASME IMECE • ICAMMS",
       icon: <ArticleIcon fontSize="medium" />,
       accent: "var(--accent-highlight)"
-    },
-    {
-      number: "8.7",
-      label: "CGPA (VNIT Nagpur)",
-      sublabel: "Top tier Computer Science Undergrad",
-      icon: <SchoolIcon fontSize="medium" />,
-      accent: "var(--accent-secondary)"
     }
   ];
 
@@ -131,7 +130,7 @@ function Highlights() {
         }
 
         .stat-number {
-          font-size: 1.8rem;
+          font-size: 1.55rem;
           font-weight: 800;
           letter-spacing: -0.02em;
           color: var(--text-primary);
@@ -140,7 +139,7 @@ function Highlights() {
         }
 
         .stat-label {
-          font-size: 0.9rem;
+          font-size: 0.88rem;
           font-weight: 600;
           color: var(--text-primary);
           margin-top: 2px;
@@ -157,3 +156,4 @@ function Highlights() {
 }
 
 export default Highlights;
+

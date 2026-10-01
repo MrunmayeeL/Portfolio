@@ -1,35 +1,34 @@
 import React from "react";
-import TerminalIcon from '@mui/icons-material/Terminal';
-import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
-import CloudQueueIcon from '@mui/icons-material/CloudQueue';
+import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 function CurrentlyWorking() {
   const items = [
     {
-      title: "Agentic AI Research",
-      description: "Exploring multi-agent orchestration, swarm intelligence decision pipelines, and task delegation patterns in localized AI agents.",
-      icon: <TerminalIcon fontSize="small"/>,
-      tag: "Research"
-    },
-    {
-      title: "Autonomous UAV Systems",
-      description: "Developing robust path planning algorithms (ROS/MAVLink) for obstacle avoidance and exploration in cluttered GPS-denied environments.",
-      icon: <FlightTakeoffIcon fontSize="small"/>,
-      tag: "Robotics"
-    },
-    {
-      title: "Cloud-native AI Solutions",
-      description: "Architecting microservice orchestrations (AWS/Docker) to deploy and scale low-latency inference pipelines for computer vision models.",
-      icon: <CloudQueueIcon fontSize="small"/>,
-      tag: "Cloud"
-    },
-    {
-      title: "Spring Boot Development",
-      description: "Optimizing enterprise logging framework hooks (AWS CloudWatch integration) for microsecond logging latency.",
+      title: "Backend & Systems Development",
+      description: "Building production-ready backend services using Java, Spring Boot, PostgreSQL, and Oracle SQL with robust REST APIs.",
       icon: <StorageIcon fontSize="small"/>,
-      tag: "Backend"
+      tag: "SDE"
+    },
+    {
+      title: "Automated Program Repair & Agents",
+      description: "Developing AST-based code analysis pipelines and LLM agent frameworks for automated localized bug fixing.",
+      icon: <CodeIcon fontSize="small"/>,
+      tag: "Software AI"
+    },
+    {
+      title: "Computer Vision & OCR Pipelines",
+      description: "Engineering image processing and OCR pipelines (PaddleOCR, OpenCV, SBERT) for automated text and derivation evaluation.",
+      icon: <VisibilityIcon fontSize="small"/>,
+      tag: "Vision / AI"
+    },
+    {
+      title: "Autonomous Systems & Controls",
+      description: "Working on telemetry communication and control software (MAVLink, Python, C++) for autonomous aerial platforms.",
+      icon: <AutoAwesomeIcon fontSize="small"/>,
+      tag: "Systems"
     }
   ];
 
@@ -41,7 +40,7 @@ function CurrentlyWorking() {
             <span className="live-badge">
               <span className="live-dot"></span> Currently Engaged In
             </span>
-            <p className="working-subtitle">Active research, core engineering focus, and academic pursuits.</p>
+            <p className="working-subtitle">Core software engineering focus, AI application development, and academic projects.</p>
           </div>
           <div className="working-grid">
             {items.map((item, idx) => (
@@ -200,3 +199,4 @@ function CurrentlyWorking() {
 }
 
 export default CurrentlyWorking;
+

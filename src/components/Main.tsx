@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-import SchoolIcon from '@mui/icons-material/School';
 import DescriptionIcon from '@mui/icons-material/Description';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const TYPING_WORDS = [
-  "Multi-Agent Systems",
-  "Robotics & Control",
-  "Autonomous Systems",
-  "Distributed Systems",
-  "Research Engineering",
-  "Cloud-native AI"
+  "Software Engineering",
+  "Full-Stack & Backend",
+  "Data Structures & Algorithms",
+  "Computer Vision & AI",
+  "Autonomous Systems"
 ];
 
 function Main() {
@@ -27,19 +25,16 @@ function Main() {
 
     const handleType = () => {
       if (!isDeleting) {
-        // Typing
         setCurrentText((prev) => fullText.substring(0, prev.length + 1));
-        setTypingSpeed(100); // stable typing speed
+        setTypingSpeed(100);
         
         if (currentText === fullText) {
-          // Pause at the end of word
           timer = setTimeout(() => setIsDeleting(true), 2000);
           return;
         }
       } else {
-        // Deleting
         setCurrentText((prev) => fullText.substring(0, prev.length - 1));
-        setTypingSpeed(50); // faster deleting speed
+        setTypingSpeed(50);
         
         if (currentText === "") {
           setIsDeleting(false);
@@ -55,21 +50,19 @@ function Main() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, wordIndex, typingSpeed]);
 
+  const profilePicUrl = `${process.env.PUBLIC_URL}/profile-image.jpg`;
+  const resumePdfUrl = `${process.env.PUBLIC_URL}/resume_short (1).pdf`;
+
   return (
     <section className="hero-section" id="hero">
       <div className="hero-grid-pattern"></div>
       
       <div className="hero-flex-container">
-        {/* ========================================================================= */}
-        {/* PROFILE IMAGE PLACEHOLDER                                                 */}
-        {/* Replace this placeholder with your actual profile image by placing your   */}
-        {/* photo in the public directory at: public/profile-image.jpg                */}
-        {/* ========================================================================= */}
         <div className="hero-image-wrapper">
           <div className="hero-image-card">
             <img
-              src="/profile-image.jpg"
-              alt="Mrunmayee Mandar Limaye"
+              src={profilePicUrl}
+              alt="Mrunmayee Limaye"
               className="hero-profile-img"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -82,8 +75,7 @@ function Main() {
                 <span>ML</span>
               </div>
               <div className="fallback-info">
-                <span className="fallback-title">Profile Photo Placeholder</span>
-                <span className="fallback-path">Replace file: <code>public/profile-image.jpg</code></span>
+                <span className="fallback-title">Mrunmayee Limaye</span>
               </div>
             </div>
           </div>
@@ -92,48 +84,62 @@ function Main() {
         <div className="hero-content">
           <div className="hero-top-badge">
             <span className="pulse-dot"></span>
-            <span>Actively seeking Fall 2027 MS & Research Opportunities</span>
+            <span>B.Tech CSE @ VNIT Nagpur (AIR 5401 JEE Mains)</span>
           </div>
           
-          <h1 className="hero-name">Mrunmayee Mandar Limaye</h1>
+          <h1 className="hero-name">Mrunmayee Limaye</h1>
           
           <h2 className="hero-title">
             Computer Science Undergraduate at VNIT Nagpur
             <div className="typing-container">
-              <span>Specializing in </span>
+              <span>Focusing on </span>
               <span className="typing-text">{currentText}</span>
               <span className="typing-cursor">|</span>
             </div>
           </h2>
 
           <p className="hero-bio">
-            I design and build autonomous, intelligent systems. My work spans the pipeline from high-level 
-            <strong> Multi-Agent AI</strong> and <strong>Computer Vision</strong> algorithms to real-time 
-            <strong> Robotics Control (ROS/ArduPilot)</strong> and scalable <strong>Cloud Infrastructure (AWS/Spring Boot)</strong>. 
-            Bridging the gap between academic research and production-grade software engineering is my primary drive.
+            I build practical software applications and intelligent systems. My work spans 
+            <strong> Full-Stack & Backend Development (Spring Boot, Oracle/PostgreSQL, REST APIs)</strong>, 
+            <strong> Computer Vision (OpenCV, YOLO, OCR)</strong>, and <strong>Autonomous Systems</strong>. 
+            I enjoy taking on complex engineering challenges and writing clean, reliable code.
           </p>
 
           <div className="hero-buttons">
-            <a href="#resume-placeholder" className="btn-primary btn-resume-cta">
-              <DescriptionIcon fontSize="medium" /> Download / View Resume CV
+            <a 
+              href={resumePdfUrl} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn-primary btn-resume-cta"
+            >
+              <DescriptionIcon fontSize="medium" /> View / Download Resume
             </a>
-            <a href="https://github.com/mrunmayee-limaye" target="_blank" rel="noreferrer" className="btn-secondary">
+            <a 
+              href="https://github.com/MrunmayeeL" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn-secondary"
+            >
               <GitHubIcon fontSize="small" /> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/mrunmayee-limaye" target="_blank" rel="noreferrer" className="btn-secondary">
+            <a 
+              href="https://www.linkedin.com/in/mrunmayee-limaye-49a28628a" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn-secondary"
+            >
               <LinkedInIcon fontSize="small" /> LinkedIn
             </a>
-            <a href="#google-scholar-placeholder" className="btn-secondary">
-              <SchoolIcon fontSize="small" /> Google Scholar <span className="todo-badge">TODO</span>
-            </a>
-            <a href="mailto:mrunmayee.limaye@gmail.com" className="btn-secondary">
+            <a 
+              href="mailto:mrunmayee.limaye.01@gmail.com" 
+              className="btn-secondary"
+            >
               <EmailIcon fontSize="small" /> Email
             </a>
           </div>
         </div>
       </div>
 
-      {/* Scroll Down / Read More Arrow Indicator */}
       <div className="hero-scroll-indicator">
         <a 
           href="#about" 
@@ -296,21 +302,9 @@ function Main() {
         }
 
         .fallback-title {
-          font-size: 0.85rem;
+          font-size: 0.95rem;
           font-weight: 600;
           color: var(--text-primary);
-        }
-
-        .fallback-path {
-          font-size: 0.75rem;
-          color: var(--text-secondary);
-        }
-
-        .fallback-path code {
-          background-color: rgba(201, 108, 74, 0.1);
-          color: var(--accent-primary);
-          padding: 2px 5px;
-          border-radius: 4px;
         }
 
         .hero-top-badge {
@@ -370,7 +364,7 @@ function Main() {
         }
 
         .hero-title {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           font-weight: 500;
           color: var(--text-secondary);
           line-height: 1.4;
@@ -379,7 +373,7 @@ function Main() {
 
         @media (max-width: 768px) {
           .hero-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
           }
         }
 
@@ -409,7 +403,7 @@ function Main() {
         }
 
         .hero-bio {
-          font-size: 1.15rem;
+          font-size: 1.1rem;
           color: var(--text-secondary);
           line-height: 1.7;
           margin-bottom: 40px;
@@ -433,17 +427,10 @@ function Main() {
           font-weight: 700 !important;
           background-color: var(--accent-primary) !important;
           box-shadow: 0 6px 20px rgba(201, 108, 74, 0.25) !important;
-          animation: pulse-border 2s infinite;
-        }
-
-        @keyframes pulse-border {
-          0% { box-shadow: 0 0 0 0 rgba(201, 108, 74, 0.4); }
-          70% { box-shadow: 0 0 0 10px rgba(201, 108, 74, 0); }
-          100% { box-shadow: 0 0 0 0 rgba(201, 108, 74, 0); }
         }
       `}</style>
     </section>
   );
 }
 
-export default Main;
+export default Main;

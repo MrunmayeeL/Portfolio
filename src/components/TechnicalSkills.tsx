@@ -4,7 +4,6 @@ import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturi
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import StorageIcon from '@mui/icons-material/Storage';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import BuildIcon from '@mui/icons-material/Build';
 
 interface SkillCategory {
   title: string;
@@ -15,34 +14,34 @@ interface SkillCategory {
 function TechnicalSkills() {
   const categories: SkillCategory[] = [
     {
-      title: "Programming",
+      title: "Programming Languages",
       icon: <CodeIcon fontSize="small"/>,
-      skills: ["Python", "Java", "C++", "C", "SQL", "JavaScript"]
+      skills: ["Java", "Python", "C++", "C", "SQL", "JavaScript", "HTML5 / CSS3"]
     },
     {
-      title: "Artificial Intelligence",
-      icon: <AutoAwesomeIcon fontSize="small"/>,
-      skills: ["PyTorch", "OpenCV", "YOLO (v5/v8)", "LLM Pipelines", "SBERT", "PaddleOCR", "Computer Vision"]
-    },
-    {
-      title: "Cloud & Systems",
-      icon: <CloudQueueIcon fontSize="small"/>,
-      skills: ["AWS", "Docker", "GitLab CI/CD", "Linux", "Telemetry Tracking", "CloudWatch"]
-    },
-    {
-      title: "Backend Engineering",
+      title: "Backend & Web Engineering",
       icon: <StorageIcon fontSize="small"/>,
-      skills: ["Spring Boot", "REST APIs", "Microservices", "PostgreSQL", "Relational Modeling"]
+      skills: ["Spring Boot", "REST APIs", "FastAPI", "Node.js", "Express.js", "React.js", "PL/SQL", "Socket.IO"]
     },
     {
-      title: "Robotics & Swarms",
+      title: "Databases & Storage",
+      icon: <StorageIcon fontSize="small"/>,
+      skills: ["PostgreSQL", "Oracle SQL", "MySQL", "MongoDB", "Redis", "Relational Modeling"]
+    },
+    {
+      title: "AI, ML & Computer Vision",
+      icon: <AutoAwesomeIcon fontSize="small"/>,
+      skills: ["PyTorch", "OpenCV", "Multimodal LLMs", "SBERT Embeddings", "PaddleOCR / EasyOCR", "YOLO (v5/v8)", "AST Code Analysis"]
+    },
+    {
+      title: "Cloud, DevOps & Tools",
+      icon: <CloudQueueIcon fontSize="small"/>,
+      skills: ["AWS CloudWatch", "Docker", "Git", "GitLab CI/CD", "JIRA", "Linux", "Postman", "Valgrind"]
+    },
+    {
+      title: "Embedded & Control Systems",
       icon: <PrecisionManufacturingIcon fontSize="small"/>,
-      skills: ["ROS (Robot OS)", "DroneKit", "ArduPilot", "MAVLink Control", "PX4 Autopilot", "Gazebo Simulator"]
-    },
-    {
-      title: "Developer Tools",
-      icon: <BuildIcon fontSize="small"/>,
-      skills: ["Git", "GitHub Actions", "VSCode", "JIRA", "Postman", "Valgrind Memory Debugger"]
+      skills: ["ESP32", "MPU6050 IMU", "ESP-NOW Protocol", "MAVLink", "ArduPilot", "ROS", "DroneKit"]
     }
   ];
 
@@ -50,7 +49,7 @@ function TechnicalSkills() {
     <section className="skills-section-new" id="skills">
       <div className="container">
         <h2 className="section-title">Technical Skills</h2>
-        <p className="section-subtitle">Categorized competencies spanning robotics control and cloud-native software.</p>
+        <p className="section-subtitle">Segregated technologies and frameworks extracted from backend software projects, AI pipelines, and systems work.</p>
 
         <div className="skills-grid-layout">
           {categories.map((cat, idx) => (
@@ -60,15 +59,11 @@ function TechnicalSkills() {
                 <h3>{cat.title}</h3>
               </div>
               <div className="skills-list-box">
-                {cat.skills.map((skill, sIdx) => {
-                  const isPlaceholder = skill.includes("placeholder") || skill.includes("PX4") || skill.includes("Gazebo");
-                  return (
-                    <span className="skill-chip-item" key={sIdx}>
-                      {skill}
-                      {isPlaceholder && <span className="todo-badge-inline">TODO</span>}
-                    </span>
-                  );
-                })}
+                {cat.skills.map((skill, sIdx) => (
+                  <span className="skill-chip-item" key={sIdx}>
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
@@ -156,18 +151,10 @@ function TechnicalSkills() {
           color: var(--text-primary);
           background-color: rgba(201, 108, 74, 0.02);
         }
-
-        .todo-badge-inline {
-          font-size: 0.55rem;
-          font-weight: 700;
-          background-color: var(--accent-highlight);
-          color: #171311;
-          padding: 1px 3px;
-          border-radius: 2px;
-        }
       `}</style>
     </section>
   );
 }
 
 export default TechnicalSkills;
+

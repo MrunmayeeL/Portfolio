@@ -6,7 +6,7 @@ function About() {
     <section className="about-section-new" id="about">
       <div className="container">
         <h2 className="section-title">About Me</h2>
-        <p className="section-subtitle">Building software projects across backend development, cloud, automation and Agentic AI.</p>
+        <p className="section-subtitle">Building software projects across backend engineering, full-stack web, computer vision, and autonomous systems.</p>
 
         <div className="about-grid">
           <div className="about-main paper-card">
@@ -17,7 +17,7 @@ function About() {
             
             <div className="about-text-content">
               <p>
-                Technology was around me long before I knew what I wanted to build with it.Watching my father and brother work in the field sparked my curiosity, but studying Computer Science at VNIT turned that curiosity into something of my own — a fascination with what I can imagine and create with software.
+                Technology was around me long before I knew what I wanted to build with it. Watching my father and brother work in the field sparked my curiosity, but studying Computer Science at VNIT turned that curiosity into something of my own — a fascination with what I can imagine and create with software.
               </p>
 
               <p>
@@ -28,18 +28,17 @@ function About() {
                 <strong>I'm a software developer by foundation, a researcher by curiosity, and a builder at heart.</strong>
               </p>
 
-
               <div className="future-goals-block">
-                <h4>Future Outlook</h4>
+                <h4>Looking Ahead</h4>
                 <p>
-                  Looking for opportunities to learn, build, and contribute. I'm actively seeking a 6-month software engineering internship from January to May, and I'm also open to full-time opportunities where I can work on meaningful products, learn from experienced teams, and grow as a software engineer. I'm open to both remote and on-site roles.
+                  I'm actively seeking Software Engineering (SDE) full-time roles and 6-month internship opportunities where I can solve real software problems, write production-grade code, and learn from experienced engineering teams.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="about-side-card paper-card">
-            <h3>My compass</h3>
+            <h3>My Compass</h3>
             <div className="directives-list">
               <div className="directive-item">
                 <span className="directive-num">01</span>
@@ -59,14 +58,14 @@ function About() {
                 <span className="directive-num">03</span>
                 <div>
                   <h5>Go the Extra Mile</h5>
-                  <p>Don't just meet the bar. Do more than what is expected.That is where good becomes better</p>
+                  <p>Don't just meet the bar. Do more than what is expected. That is where good becomes better.</p>
                 </div>
               </div>
               <div className="directive-item">
                 <span className="directive-num">04</span>
                 <div>
-                  <h5>Chase the Failure</h5>
-                  <p>The hardest problems often have the most to teach. Don't walk away from them , grow with them.</p>
+                  <h5>Chase the Challenge</h5>
+                  <p>The hardest problems often have the most to teach. Don't walk away from them, grow with them.</p>
                 </div>
               </div>
             </div>
@@ -205,3 +204,4 @@ function About() {
 }
 
 export default About;
+

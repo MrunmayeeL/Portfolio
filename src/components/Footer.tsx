@@ -5,6 +5,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const resumePdfUrl = `${process.env.PUBLIC_URL}/resume_short (1).pdf`;
 
   return (
     <footer className="footer-section">
@@ -12,22 +13,22 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-left">
             <p className="footer-credit">
-              Designed and developed by <strong>Mrunmayee Mandar Limaye</strong> using React and TypeScript.
+              Designed and built by <strong>Mrunmayee Limaye</strong> using React and TypeScript.
             </p>
-            <p className="footer-location">Nagpur, India • Open for global opportunities</p>
+            <p className="footer-location">VNIT Nagpur, India • Open for global software engineering opportunities</p>
           </div>
           <div className="footer-right">
             <div className="footer-socials">
-              <a href="https://github.com/mrunmayee-limaye" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub"><GitHubIcon fontSize="small"/></a>
-              <a href="https://www.linkedin.com/in/mrunmayee-limaye" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn"><LinkedInIcon fontSize="small"/></a>
-              <a href="mailto:mrunmayee.limaye@gmail.com" title="Email" aria-label="Email"><MailOutlineIcon fontSize="small"/></a>
+              <a href="https://github.com/MrunmayeeL" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub"><GitHubIcon fontSize="small"/></a>
+              <a href="https://www.linkedin.com/in/mrunmayee-limaye-49a28628a" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn"><LinkedInIcon fontSize="small"/></a>
+              <a href="mailto:mrunmayee.limaye.01@gmail.com" title="Email" aria-label="Email"><MailOutlineIcon fontSize="small"/></a>
             </div>
-            <a href="#resume-placeholder" className="footer-resume-link">Download CV (PDF)</a>
+            <a href={resumePdfUrl} target="_blank" rel="noreferrer" className="footer-resume-link">Download CV (PDF)</a>
           </div>
         </div>
         <div className="footer-bottom">
           <p className="footer-copy">
-            &copy; {currentYear} Mrunmayee Mandar Limaye. All rights reserved.
+            &copy; {currentYear} Mrunmayee Limaye. All rights reserved.
           </p>
         </div>
       </div>
@@ -117,6 +118,7 @@ function Footer() {
           border-bottom: 1px dashed var(--accent-primary);
           padding-bottom: 2px;
           transition: all 0.2s ease;
+          text-decoration: none;
         }
 
         .footer-resume-link:hover {
@@ -141,4 +143,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer;

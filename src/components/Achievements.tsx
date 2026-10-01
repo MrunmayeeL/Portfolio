@@ -6,46 +6,41 @@ interface Achievement {
   category: string;
   description: string;
   metric?: string;
-  todo?: boolean;
 }
 
 function Achievements() {
   const list: Achievement[] = [
     {
-      title: "Pending Publication L-RA",
+      title: "AIR 5401 — JEE Mains",
+      category: "Academic Rank",
+      description: "Secured All India Rank 5401 in JEE Mains among over 1 million candidates nationwide, securing admission to B.Tech Computer Science at VNIT Nagpur.",
+      metric: "Top 0.5% Nationally"
+    },
+    {
+      title: "Ignite Prize — NIDAR",
+      category: "Competition",
+      description: "National-level UAV Autonomy Competition ranker (Top 5 out of 100+ teams nationwide), demonstrating end-to-end autonomous search & payload delivery.",
+      metric: "Top 5 Nationwide"
+    },
+    {
+      title: "First Runner-Up — Drone Helix",
+      category: "Robotics Competition",
+      description: "SVNIT Surat autonomous drone challenge showcasing precision flight control, obstacle avoidance, and dynamic navigation.",
+      metric: "1st Runner-Up"
+    },
+    {
+      title: "Conference Research Publications",
       category: "Research",
-      description: "Preprint on localized Velocity Obstacle collision avoidance for multi-agent UAV coordination submitted to IEEE Letters.",
-      metric: "1 Submission",
-      todo: true
-    },
-    {
-      title: "Robotics Competition Win",
-      category: "Hackathon",
-      description: "Undergraduate competition or design challenge win in robotics routing or system control.",
-      metric: "1st Place",
-      todo: true
-    },
-    {
-      title: "VNIT Nagpur Dean's List",
-      category: "Academic",
-      description: "Academic excellence citation awarded to students maintaining top-tier grades in the Computer Science department.",
-      metric: "CGPA 8.7",
-      todo: true
-    },
-    {
-      title: "National Merit Scholarship",
-      category: "Scholarship",
-      description: "Merit-based financial award for outstanding engineering undergraduate candidates.",
-      metric: "Under Review",
-      todo: true
+      description: "Published and accepted research papers across IEEE BigData 2025, CVIP 2026, ASME IMECE 2026, and ICAMMS 2026.",
+      metric: "4 Papers"
     }
   ];
 
   return (
     <section className="achievements-section" id="achievements">
       <div className="container">
-        <h2 className="section-title">Key Achievements</h2>
-        <p className="section-subtitle">Academic honors, competition rankings, and research milestones.</p>
+        <h2 className="section-title">Key Achievements & Honors</h2>
+        <p className="section-subtitle">Academic ranks, competition awards, and publication milestones.</p>
 
         <div className="achievements-grid-layout">
           {list.map((item, idx) => (
@@ -55,7 +50,6 @@ function Achievements() {
                   <EmojiEventsIcon fontSize="small"/>
                 </span>
                 <span className="ach-category">{item.category}</span>
-                {item.todo && <span className="todo-badge">TODO</span>}
               </div>
               <h3 className="ach-title">{item.title}</h3>
               <p className="ach-desc">{item.description}</p>
@@ -156,3 +150,4 @@ function Achievements() {
 }
 
 export default Achievements;
+

@@ -7,15 +7,12 @@ interface PublicationData {
   title: string;
   authors: string;
   venue: string;
-  status: "Published" | "Under Review" | "Coming Soon";
+  status: "Published" | "In Press" | "Accepted";
   abstract: string;
   keywords: string[];
   bibtex: string;
   citation: string;
-  pdf?: string;
-  slides?: string;
-  code?: string;
-  dataset?: string;
+  doiLink?: string;
 }
 
 function Publications() {
@@ -29,42 +26,53 @@ function Publications() {
 
   const publications: PublicationData[] = [
     {
-      title: "Robust Anomaly Detection in High-Dimensional Time-Series Streams for Distributed Cloud Clusters",
-      authors: "Mrunmayee Mandar Limaye, et al.",
-      venue: "Proceedings of the IEEE International Conference on Big Data (IEEE Big Data 2025)",
+      title: "A Visual-to-Symbolic Pipeline for Automated Verification of Handwritten Mathematical Derivations Using Multimodal LLMs",
+      authors: "Hrishikesh Vichare, Arjun Jaishankar SV, Avinav Mendu, Mrunmayee N. Limaye, Praveen Kumar",
+      venue: "11th International Conference on Computer Vision & Image Processing (CVIP 2026)",
+      status: "In Press",
+      abstract: "Automated verification of handwritten mathematical derivations requires reliable transcription of symbolic notation from images and step-by-step logical consistency evaluation. We propose a four-layer visual-to-symbolic verification pipeline evaluating multimodal LLMs across 66 real handwritten student pages. Gemini achieved 93.3% verdict accuracy and 78.3% exact score match in rubric-based step-continuity grading.",
+      keywords: ["Computer Vision", "Multimodal LLMs", "Symbolic Verification", "OCR Grading", "Pattern Recognition"],
+      bibtex: `@inproceedings{vichare2026visual,\n  title={A Visual-to-Symbolic Pipeline for Automated Verification of Handwritten Mathematical Derivations Using Multimodal LLMs},\n  author={Vichare, Hrishikesh and Jaishankar SV, Arjun and Mendu, Avinav and Limaye, Mrunmayee N. and Kumar, Praveen},\n  booktitle={11th International Conference on Computer Vision \\& Image Processing (CVIP)},\n  year={2026}\n}`,
+      citation: "Vichare, H., Jaishankar SV, A., Mendu, A., Limaye, M. N., & Kumar, P. (2026). A Visual-to-Symbolic Pipeline for Automated Verification of Handwritten Mathematical Derivations Using Multimodal LLMs. 11th International Conference on Computer Vision & Image Processing (CVIP 2026)."
+    },
+    {
+      title: "Prompted to Fly: Translating Free-Form Instructions into Schema-Constrained Mission Generation for UAVs using LLMs",
+      authors: "A. Sharma, M. Ravikiran, S. Chakrabarty, R. Saluja, M. Limaye, H. Kolhe, and S. Samiron",
+      venue: "IEEE International Conference on Big Data (BigData 2025) · Macau, China (pp. 7278–7286)",
       status: "Published",
-      abstract: "Analyzing distributed cloud telemetry under massive concurrency. This work formulates an adaptive thresholding algorithm running over high-dimensional streaming logs. By evaluating anomaly scoring vectors across decoupled cluster layers, we reduce latency overhead by 30% under peak loads.",
-      keywords: ["Cloud Telemetry", "Anomaly Detection", "Distributed Systems", "Time-Series"],
-      bibtex: `@inproceedings{limaye2025robust,\n  title={Robust Anomaly Detection in High-Dimensional Time-Series Streams},\n  author={Limaye, Mrunmayee Mandar and others},\n  booktitle={IEEE International Conference on Big Data},\n  year={2025}\n}`,
-      citation: "Limaye, M. M., et al. (2025). Robust Anomaly Detection in High-Dimensional Time-Series Streams for Distributed Cloud Clusters. Proceedings of the IEEE International Conference on Big Data."
+      abstract: "A system that translates natural-language operator instructions into schema-constrained UAV mission plans using large language models, enabling non-expert users to command autonomous drones through free-form text.",
+      keywords: ["LLMs for Robotics", "UAV Mission Planning", "NLP", "Schema Constraints", "IEEE BigData"],
+      bibtex: `@inproceedings{sharma2025prompted,\n  title={Prompted to Fly: Translating Free-Form Instructions into Schema-Constrained Mission Generation for UAVs using LLMs},\n  author={Sharma, A. and Ravikiran, M. and Chakrabarty, S. and Saluja, R. and Limaye, M. and Kolhe, H. and Samiron, S.},\n  booktitle={IEEE International Conference on Big Data (BigData)},\n  pages={7278--7286},\n  year={2025},\n  doi={10.1109/BigData66926.2025.11401432}\n}`,
+      citation: "Sharma, A., et al. (2025). Prompted to Fly: Translating Free-Form Instructions into Schema-Constrained Mission Generation for UAVs using LLMs. IEEE International Conference on Big Data (BigData), pp. 7278-7286.",
+      doiLink: "https://doi.org/10.1109/BigData66926.2025.11401432"
     },
     {
-      title: "Decentralized Collision Avoidance for Multi-UAV Swarms in Cluttered Environments Using Localized Velocity Obstacles",
-      authors: "Mrunmayee Mandar Limaye, et al.",
-      venue: "Accepted (In Press), IEEE Robotics and Automation Letters (L-RA)",
-      status: "Coming Soon",
-      abstract: "This paper introduces a decentralized spatial optimization pipeline for micro-aerial vehicle (UAV) swarms operating in search and rescue missions. By deploying localized velocity-obstacle (VO) filters on-board each PX4 unit, we establish a collision-free consensus model that requires no global coordination server. Flight tests in Gazebo simulators and physical hardware showcase robust target tracking and avoidance rates.",
-      keywords: ["Multi-Agent Swarms", "Autonomous UAVs", "Path Planning", "ROS", "PX4"],
-      bibtex: `@article{limaye2026multi,\n  title={Decentralized Collision Avoidance for Multi-UAV Swarms in Cluttered Environments},\n  author={Limaye, Mrunmayee Mandar and others},\n  journal={IEEE Robotics and Automation Letters (Accepted)},\n  year={2026}\n}`,
-      citation: "Limaye, M. M., et al. (2026). Decentralized Collision Avoidance for Multi-UAV Swarms in Cluttered Environments. IEEE Robotics and Automation Letters (L-RA). In Press."
+      title: "ATLAS: A Cooperative Aerial System for Large-Scale Search and Delivery",
+      authors: "Harshal Kolhe, Spruha Kshirsagar, Mrunmayee Limaye, Sanchet Dhalwar, Ishani Khaty, Vishnu S, Ajinkya Baxy",
+      venue: "ASME International Mechanical Engineering Congress & Exposition (IMECE India 2026)",
+      status: "In Press",
+      abstract: "A distributed fleet of aerial agents using shared communication meshes to dynamically map and scan massive geographic areas. This framework is designed for disaster response, search-and-rescue, and area coverage.",
+      keywords: ["Multi-Drone Coordination", "Aerial Human Detection", "Coverage Path Planning", "Autonomous UAVs"],
+      bibtex: `@inproceedings{kolhe2026atlas,\n  title={ATLAS: A Cooperative Aerial System for Large-Scale Search and Delivery},\n  author={Kolhe, Harshal and Kshirsagar, Spruha and Limaye, Mrunmayee and Dhalwar, Sanchet and Khaty, Ishani and Vishnu, S. and Baxy, Ajinkya},\n  booktitle={ASME International Mechanical Engineering Congress \\& Exposition (IMECE India)},\n  year={2026}\n}`,
+      citation: "Kolhe, H., Kshirsagar, S., Limaye, M., et al. (2026). ATLAS: A Cooperative Aerial System for Large-Scale Search and Delivery. ASME IMECE India 2026."
     },
     {
-      title: "Intelligent Spraying Controller for Agricultural Drones via Visual Crop-Bed Segmentation and Edge YOLO Inference",
-      authors: "Mrunmayee Mandar Limaye, et al.",
-      venue: "Accepted (In Press), National Conference on Autonomous UAV Systems",
-      status: "Coming Soon",
-      abstract: "Automating precision spraying in agricultural fields. Using a downward-facing camera feed, we deploy a cropped YOLOv8 model combined with boundary segmentation on the edge. The system adjusts actuator flow dynamically, reducing crop-bed chemical runoff.",
-      keywords: ["Precision Agriculture", "YOLOv8", "Computer Vision", "Valve Actuation"],
-      bibtex: `@inproceedings{limaye2026agri,\n  title={Intelligent Spraying Controller for Agricultural Drones via Visual Crop-Bed Segmentation},\n  author={Limaye, Mrunmayee Mandar and others},\n  booktitle={National Conference on Autonomous UAV Systems (Accepted)},\n  year={2026}\n}`,
-      citation: "Limaye, M. M., et al. (2026). Intelligent Spraying Controller for Agricultural Drones. National Conference on Autonomous UAV Systems. In Press."
+      title: "A Multi-Agent Drone System for Real-Time Victim Detection and Aid Delivery",
+      authors: "S. Kshirsagar, H. Kolhe, R. Deshmukh, K. Ayush, S. Dhalwar, S. Biswas, M. Limaye, and S. S. Chiddarwar",
+      venue: "International Conference on Advances in Mechanical and Manufacturing Systems (ICAMMS) · VNIT Nagpur, 2026",
+      status: "In Press",
+      abstract: "Cooperative multi-UAV framework combining area coverage, coordination algorithms, localization, and real-time YOLO-based victim detection for autonomous aid delivery in disaster response.",
+      keywords: ["Multi-UAV", "Disaster Response", "Computer Vision", "UAV Autonomy", "RTK"],
+      bibtex: `@inproceedings{kshirsagar2026multi,\n  title={A Multi-Agent Drone System for Real-Time Victim Detection and Aid Delivery},\n  author={Kshirsagar, S. and Kolhe, H. and Deshmukh, R. and Ayush, K. and Dhalwar, S. and Biswas, S. and Limaye, M. and Chiddarwar, S. S.},\n  booktitle={International Conference on Advances in Mechanical and Manufacturing Systems (ICAMMS)},\n  year={2026}\n}`,
+      citation: "Kshirsagar, S., Kolhe, H., Limaye, M., et al. (2026). A Multi-Agent Drone System for Real-Time Victim Detection and Aid Delivery. ICAMMS 2026."
     }
   ];
 
   return (
     <section className="publications-section" id="publications">
       <div className="container">
-        <h2 className="section-title">Research Publications</h2>
-        <p className="section-subtitle">Academic papers, workshop contributions, and preprints.</p>
+        <h2 className="section-title">Publications</h2>
+        <p className="section-subtitle">Conference papers in computer vision, LLM agent pipelines, and autonomous multi-agent systems.</p>
 
         <div className="publications-list">
           {publications.map((pub, idx) => (
@@ -74,14 +82,13 @@ function Publications() {
                   <span className={`pub-status-tag ${pub.status.toLowerCase().replace(" ", "-")}`}>
                     {pub.status}
                   </span>
-                  <span className="pub-type-tag"><BookIcon fontSize="inherit"/> Journal / Conference Paper</span>
+                  <span className="pub-type-tag"><BookIcon fontSize="inherit"/> Conference Paper</span>
                 </div>
                 <h3 className="pub-title">{pub.title}</h3>
                 <p className="pub-authors">{pub.authors}</p>
                 <p className="pub-venue">{pub.venue}</p>
               </div>
 
-              {/* Expandable/Details for Abstract */}
               <details className="pub-details-dropdown">
                 <summary className="pub-details-summary">View Abstract & Details</summary>
                 <div className="pub-details-body">
@@ -100,7 +107,6 @@ function Publications() {
                 </div>
               </details>
 
-              {/* Action Buttons */}
               <div className="pub-actions">
                 <button 
                   className="btn-secondary font-mono" 
@@ -116,12 +122,11 @@ function Publications() {
                   <FileCopyIcon fontSize="small" /> 
                   {copiedId === `cite-${idx}` ? "Copied Citation!" : "Copy Citation"}
                 </button>
-                <a href="#paper-placeholder" className="btn-secondary disabled">
-                  PDF (Coming Soon)
-                </a>
-                <a href="#slides-placeholder" className="btn-secondary disabled">
-                  Slides (Coming Soon)
-                </a>
+                {pub.doiLink && (
+                  <a href={pub.doiLink} target="_blank" rel="noreferrer" className="btn-secondary">
+                    [IEEE Link ↗]
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -166,18 +171,8 @@ function Publications() {
           color: #ffffff;
         }
 
-        .pub-status-tag.under-review {
+        .pub-status-tag.in-press, .pub-status-tag.accepted {
           background-color: var(--accent-primary);
-          color: #ffffff;
-        }
-
-        .pub-status-tag.coming-soon {
-          background-color: var(--accent-highlight);
-          color: #171311;
-        }
-
-        .pub-status-tag.in-press {
-          background-color: var(--accent-secondary);
           color: #ffffff;
         }
 
@@ -211,7 +206,6 @@ function Publications() {
           margin-top: 4px;
         }
 
-        /* Details accordion dropdown */
         .pub-details-dropdown {
           margin-top: 16px;
           border-top: 1px solid var(--border-color);
@@ -268,7 +262,6 @@ function Publications() {
           border-radius: 4px;
         }
 
-        /* Actions row */
         .pub-actions {
           display: flex;
           flex-wrap: wrap;
@@ -282,15 +275,10 @@ function Publications() {
           font-size: 0.82rem;
           padding: 8px 14px;
         }
-
-        .pub-actions a.disabled {
-          opacity: 0.5;
-          pointer-events: none;
-          cursor: not-allowed;
-        }
       `}</style>
     </section>
   );
 }
 
 export default Publications;
+

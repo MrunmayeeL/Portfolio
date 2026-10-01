@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SchoolIcon from '@mui/icons-material/School';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import ScienceIcon from '@mui/icons-material/Science';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
 interface TimelineEvent {
@@ -19,59 +18,67 @@ function Timeline() {
 
   const events: TimelineEvent[] = [
     {
-      date: "May 2026 - Present",
+      date: "May 2026 - July 2026",
+      category: "internship",
+      title: "Summer SDE Intern",
+      subtitle: "NatWest Group",
+      description: "Optimized enterprise banking telemetry, eliminating 10,000 unnecessary AWS CloudWatch logs per day in Spring Boot microservices.",
+      icon: <EngineeringIcon fontSize="small"/>
+    },
+    {
+      date: "Apr 2026",
+      category: "project",
+      title: "CareFlow Clinic System",
+      subtitle: "Full-Stack & Database Engineering",
+      description: "Engineered full-stack clinic platform with 10-table normalized relational DB and PL/SQL billing triggers.",
+      icon: <ScienceIcon fontSize="small"/>
+    },
+    {
+      date: "Mar 2026",
+      category: "project",
+      title: "SAFE: Agentic Feedback Engine",
+      subtitle: "Automated Program Repair",
+      description: "Built multi-agent AST code analysis and patch generation pipeline, achieving 100% syntactically valid code repair.",
+      icon: <ScienceIcon fontSize="small"/>
+    },
+    {
+      date: "CVIP 2026 (In Press)",
       category: "publication",
-      title: "Swarm Collision Avoidance Paper Submission",
-      subtitle: "IEEE Robotics and Automation Letters (Under Review)",
-      description: "Submitted primary authored manuscript detailing localized collision obstacles for UAV swarms to IEEE Letters.",
+      title: "Handwritten Math Derivation Verification Paper",
+      subtitle: "11th CVIP Conference 2026",
+      description: "Co-authored visual-to-symbolic verification pipeline using multimodal LLMs for automated math grading (93.3% verdict accuracy).",
       icon: <LibraryBooksIcon fontSize="small"/>
     },
     {
       date: "May 2025 - July 2025",
       category: "internship",
-      title: "Software Engineering Intern",
-      subtitle: "NatWest Group",
-      description: "Optimized microservice application telemetry, writing asynchronous Java streams connecting APIs to AWS CloudWatch.",
-      icon: <EngineeringIcon fontSize="small"/>
-    },
-    {
-      date: "Dec 2024 - Jan 2025",
-      category: "internship",
-      title: "Research Intern",
+      title: "Summer Research Intern",
       subtitle: "IIT Roorkee",
-      description: "Designed HSV target segmentation algorithms guiding spray actuators on a custom Agricultural Spraying Drone.",
+      description: "Built 200 Hz data pipeline and deployed reinforcement learning policies for quadcopter payload stabilization.",
       icon: <EngineeringIcon fontSize="small"/>
     },
     {
-      date: "May 2024 - Present",
-      category: "research",
-      title: "Robotics Research Intern",
-      subtitle: "IvLabs Robotics Lab (VNIT Nagpur)",
-      description: "Architected decentralized swarm logic and path planning scripts for Search and Rescue MAV systems.",
-      icon: <ScienceIcon fontSize="small"/>
+      date: "Dec 2025",
+      category: "publication",
+      title: "LLM UAV Mission Planning Paper",
+      subtitle: "IEEE BigData 2025 (Macau, China)",
+      description: "Published paper on schema-constrained mission generation from free-form natural language instructions using LLMs.",
+      icon: <LibraryBooksIcon fontSize="small"/>
     },
     {
-      date: "Aug 2024 - Oct 2024",
-      category: "project",
-      title: "Intelligent Answer Grader Project",
-      subtitle: "Natural Language Processing System",
-      description: "Built automated grading pipelines using PaddleOCR and semantic similarity embeddings mapped with SBERT.",
-      icon: <ScienceIcon fontSize="small"/>
+      date: "May 2024 - Oct 2024",
+      category: "internship",
+      title: "Robotics & Software Developer Intern",
+      subtitle: "IvLabs (VNIT Nagpur)",
+      description: "Built 4-wheeled gesture-controlled omnidirectional robot with ESP32 and MPU6050, presenting paper at PCEMS 2024.",
+      icon: <EngineeringIcon fontSize="small"/>
     },
     {
-      date: "Oct 2023",
-      category: "award",
-      title: "IvLabs Robotics Competition - Winner",
-      subtitle: "Autonomous Obstacle Steering Challenge",
-      description: "Awarded top place for custom inertial steering models running on wireless ESP32 microcontrollers.",
-      icon: <EmojiEventsIcon fontSize="small"/>
-    },
-    {
-      date: "Nov 2022",
+      date: "Aug 2023",
       category: "education",
-      title: "B.Tech in Computer Science",
-      subtitle: "VNIT Nagpur",
-      description: "Began Undergraduate studies in CS, building foundations in algorithms, system architecture, and spatial computing. CGPA: 9.02.",
+      title: "Admitted to VNIT Nagpur B.Tech CSE",
+      subtitle: "AIR 5401 in JEE Mains",
+      description: "Secured All India Rank 5401 in JEE Mains among 1M+ candidates to join B.Tech Computer Science & Engineering.",
       icon: <SchoolIcon fontSize="small"/>
     }
   ];
@@ -84,19 +91,17 @@ function Timeline() {
     { key: "all", label: "All Milestones" },
     { key: "education", label: "Education" },
     { key: "internship", label: "Internships" },
-    { key: "research", label: "Research Labs" },
     { key: "project", label: "Projects" },
     { key: "publication", label: "Publications" },
-    { key: "award", label: "Awards" }
+    { key: "award", label: "Honors" }
   ];
 
   return (
     <section className="timeline-section" id="timeline">
       <div className="container">
-        <h2 className="section-title">Academic & Professional Timeline</h2>
-        <p className="section-subtitle">A connected record of my research transitions, internships, and milestones.</p>
+        <h2 className="section-title">Timeline & Milestones</h2>
+        <p className="section-subtitle">Chronological record of software engineering internships, projects, research papers, and academic achievements.</p>
 
-        {/* Timeline Filters */}
         <div className="timeline-filters">
           {filters.map(filter => (
             <button
@@ -109,26 +114,22 @@ function Timeline() {
           ))}
         </div>
 
-        {/* Cohesive Vertical Timeline */}
         <div className="vertical-timeline-container">
           {filteredEvents.length === 0 ? (
             <div className="timeline-empty">No milestones match this filter.</div>
           ) : (
             filteredEvents.map((ev, idx) => (
               <div className="timeline-item-new" key={idx}>
-                {/* Left Side: Date */}
                 <div className="timeline-item-date">
                   <span>{ev.date}</span>
                 </div>
 
-                {/* Center Node */}
                 <div className="timeline-item-node" style={{ '--node-color': `var(--accent-${ev.category === 'education' ? 'secondary' : ev.category === 'internship' ? 'primary' : ev.category === 'research' ? 'support' : ev.category === 'project' ? 'support-sec' : ev.category === 'publication' ? 'highlight' : 'primary'})` } as React.CSSProperties}>
                   <div className="node-icon-inner">
                     {ev.icon}
                   </div>
                 </div>
 
-                {/* Right Side: Content Box */}
                 <div className="timeline-item-content paper-card">
                   <span className={`badge ${ev.category}`}>
                     {ev.category}
@@ -181,7 +182,6 @@ function Timeline() {
           border-color: var(--accent-primary);
         }
 
-        /* Timeline grid */
         .vertical-timeline-container {
           position: relative;
           max-width: 900px;
@@ -190,7 +190,6 @@ function Timeline() {
           text-align: left;
         }
 
-        /* Running vertical line */
         .vertical-timeline-container::before {
           content: '';
           position: absolute;
@@ -323,4 +322,4 @@ function Timeline() {
   );
 }
 
-export default Timeline;
+export default Timeline;

@@ -1,49 +1,50 @@
 import React from "react";
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import SchoolIcon from '@mui/icons-material/School';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 
 function Leadership() {
   return (
     <section className="leadership-section" id="leadership">
       <div className="container">
-        <h2 className="section-title">Leadership & Mentorship</h2>
-        <p className="section-subtitle">Fostering collaboration and knowledge sharing in the robotics community.</p>
+        <h2 className="section-title">Positions of Responsibility</h2>
+        <p className="section-subtitle">Mentorship, student leadership, and technical event organization.</p>
 
         <div className="leadership-grid">
           <div className="leadership-main paper-card">
             <div className="lead-header">
               <PeopleOutlineIcon className="lead-icon" />
-              <h3>IvLabs Laboratory Mentorship</h3>
+              <h3>IvLabs Mentor</h3>
             </div>
             <div className="lead-body">
               <p>
-                As a senior member of <strong>IvLabs</strong>, the flagship robotics research club of VNIT Nagpur, 
-                I actively guide junior undergraduates through the complexities of autonomous systems. My focus 
-                is on lowering the entry barrier to hardware-software integration.
+                As a senior member of <strong>IvLabs</strong> (VNIT's Robotics & AI Lab), I mentor junior undergraduate students on software engineering fundamentals, embedded C++, and version control best practices.
               </p>
               <ul>
-                <li><strong>Individual Mentorship:</strong> Directing 5+ junior students on spatial kinematics, Linux workspace environments, and dynamic simulation platforms (Gazebo/PX4).</li>
-                <li><strong>Code Review Standards:</strong> Introduced rigid git branching guidelines and codebase modularity requirements, increasing general repository health and software reuse.</li>
-                <li><strong>Cross-functional Coordination:</strong> Bridging the software-control subgroup and the physical structural design team to resolve weight, battery, and actuator limits for custom UAV chassis.</li>
+                <li><strong>Technical Mentorship:</strong> Guiding junior students through software-hardware integration, C++ programming on microcontrollers, and Linux development setups.</li>
+                <li><strong>Version Control Standards:</strong> Established repository guidelines, modular code structure, and pull request review workflows to improve software maintainability across lab projects.</li>
+                <li><strong>Project Coordination:</strong> Assisting student teams in designing and testing custom embedded systems and autonomous platforms for national competitions.</li>
               </ul>
             </div>
           </div>
 
           <div className="leadership-sub paper-card">
             <div className="lead-header">
-              <LibraryBooksIcon className="lead-icon" />
-              <h3>Workshops & Workshops</h3>
+              <SchoolIcon className="lead-icon" />
+              <h3>Class & Event Leadership</h3>
             </div>
             <div className="workshops-list">
               <div className="workshop-item">
-                <h5>ROS & Gazebo Workshop</h5>
-                <p>Co-led a hands-on developer training workshop for 30+ students detailing ROS nodes, custom message publishing, and high-fidelity sensor physics modeling.</p>
-                <span className="ws-date">Oct 2024</span>
+                <h5>First Year Class Representative (CR)</h5>
+                <p>Served as the primary liaison between 100+ first-year Computer Science students and department faculty, coordinating academic schedules, lab sessions, and student queries.</p>
+                <span className="ws-date">2023 - 2024</span>
               </div>
               <div className="workshop-item">
-                <h5>Computer Vision Bootcamp</h5>
-                <p>Designed tutorial pipelines demonstrating OpenCV image masking, filter kernels, and edge detection, leading up to a live deploy of YOLOv5 models.</p>
-                <span className="ws-date">Sep 2024</span>
+                <h5 style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <EventAvailableIcon fontSize="inherit" /> Event Head @ IvLabs
+                </h5>
+                <p>Organized and conducted technical robotics workshops and competition events, designing hands-on tutorials for participants and managing event execution.</p>
+                <span className="ws-date">2024 - Present</span>
               </div>
             </div>
           </div>
@@ -151,3 +152,4 @@ function Leadership() {
 }
 
 export default Leadership;
+

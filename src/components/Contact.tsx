@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import SchoolIcon from '@mui/icons-material/School';
-import BadgeIcon from '@mui/icons-material/Badge';
 import RoomIcon from '@mui/icons-material/Room';
 
 function Contact() {
@@ -28,13 +26,10 @@ function Contact() {
     setMessageError(isMessageEmpty);
 
     if (!isNameEmpty && !isEmailEmpty && !isMessageEmpty) {
-      console.log("Contact submission:", { name, email, message });
       setSubmitSuccess(true);
-
-      // Directly open email client prefilled to send to mrunmayee.limaye@gmail.com
       const mailtoSubject = encodeURIComponent(`Portfolio Contact from ${name}`);
       const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.open(`mailto:mrunmayee.limaye@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`, '_blank');
+      window.open(`mailto:mrunmayee.limaye.01@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`, '_blank');
 
       setName('');
       setEmail('');
@@ -46,16 +41,14 @@ function Contact() {
   return (
     <section className="contact-section" id="contact">
       <div className="container">
-        <h2 className="section-title">Contact & Collaboration</h2>
-        <p className="section-subtitle">Reach out for research internships, engineering roles, or academic dialogue.</p>
+        <h2 className="section-title">Get in Touch</h2>
+        <p className="section-subtitle">Reach out for software engineering roles, internships, project collaborations, or technical queries.</p>
 
         <div className="contact-grid">
-          {/* Coordinates Column */}
           <div className="contact-coordinates paper-card">
             <h3>Contact Details</h3>
             <p className="coord-desc">
-              Whether you are a recruiter searching for dynamic systems talent, a professor outlining graduate vacancies, 
-              or a researcher sharing drone metrics, my inbox is open.
+              Whether you are a recruiter looking for software engineering candidates or a developer interested in my projects, feel free to drop a message or reach out via email.
             </p>
 
             <div className="coordinates-list">
@@ -63,44 +56,37 @@ function Contact() {
                 <span className="coord-icon"><RoomIcon fontSize="small"/></span>
                 <div>
                   <h5>Location</h5>
-                  <p>Nagpur, India (VNIT Campus)</p>
+                  <p>VNIT Nagpur, India</p>
                 </div>
               </div>
               <div className="coord-item">
                 <span className="coord-icon"><MailOutlineIcon fontSize="small"/></span>
                 <div>
                   <h5>Direct Email</h5>
-                  <a href="mailto:mrunmayee.limaye@gmail.com">mrunmayee.limaye@gmail.com</a>
+                  <a href="mailto:mrunmayee.limaye.01@gmail.com">mrunmayee.limaye.01@gmail.com</a>
                 </div>
               </div>
             </div>
 
             <div className="academic-profiles">
-              <h5>Profiles & Logs</h5>
+              <h5>Profiles & Links</h5>
               <div className="profiles-links">
-                <a href="https://github.com/mrunmayee-limaye" target="_blank" rel="noreferrer" className="profile-link">
-                  <GitHubIcon fontSize="inherit"/> GitHub
+                <a href="https://github.com/MrunmayeeL" target="_blank" rel="noreferrer" className="profile-link">
+                  <GitHubIcon fontSize="inherit"/> GitHub Profile
                 </a>
-                <a href="https://www.linkedin.com/in/mrunmayee-limaye" target="_blank" rel="noreferrer" className="profile-link">
-                  <LinkedInIcon fontSize="inherit"/> LinkedIn
-                </a>
-                <a href="#google-scholar-placeholder" className="profile-link">
-                  <SchoolIcon fontSize="inherit"/> Scholar <span className="todo-badge">TODO</span>
-                </a>
-                <a href="#orcid-placeholder" className="profile-link">
-                  <BadgeIcon fontSize="inherit"/> ORCID <span className="todo-badge">TODO</span>
+                <a href="https://www.linkedin.com/in/mrunmayee-limaye-49a28628a" target="_blank" rel="noreferrer" className="profile-link">
+                  <LinkedInIcon fontSize="inherit"/> LinkedIn Profile
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Form Column */}
           <div className="contact-form-card paper-card">
             <h3>Send Message</h3>
             
             {submitSuccess && (
               <div className="success-banner">
-                <span>Message recorded successfully! Mrunmayee will reach back shortly.</span>
+                <span>Message recorded successfully! Mrunmayee will respond shortly.</span>
               </div>
             )}
 
@@ -144,7 +130,7 @@ function Contact() {
                 <textarea
                   id="user-message"
                   rows={6}
-                  placeholder="Tell me about your project, internship opportunity, or academic query..."
+                  placeholder="Tell me about your project opportunity, software engineering role, or query..."
                   value={message}
                   onChange={(e) => {
                     setMessage(e.target.value);
@@ -263,6 +249,7 @@ function Contact() {
           align-items: center;
           gap: 6px;
           transition: all 0.2s ease;
+          text-decoration: none;
         }
 
         .profile-link:hover {
@@ -271,7 +258,6 @@ function Contact() {
           background-color: rgba(201, 108, 74, 0.03);
         }
 
-        /* Form Card */
         .custom-contact-form {
           display: flex;
           flex-direction: column;
@@ -350,4 +336,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Contact;

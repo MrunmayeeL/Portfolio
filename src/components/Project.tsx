@@ -2,147 +2,156 @@ import React, { useState } from "react";
 import ProjectModal, { ProjectData } from "./ProjectModal";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import HubIcon from '@mui/icons-material/Hub';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 function Project() {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTab, setModalTab] = useState<"overview" | "architecture">("overview");
+  const [showAllMoreProjects, setShowAllMoreProjects] = useState(false);
 
   const projects: ProjectData[] = [
     {
-      id: "uav-search-rescue",
-      title: "Autonomous Multi-UAV Search and Rescue System",
-      subtitle: "Multi-agent coordination, spatial exploration, and target localization.",
-      badges: ["Research", "Publication", "Open Source"],
-      image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=600&q=80",
-      status: "Active Research",
-      duration: "May 2024 - Present",
-      role: "Lead Systems Researcher",
-      impact: "Swarm located targets in under 4 minutes across a 100m² grid in physical hardware testing.",
-      lessons: "Decentralized control requires robust local estimators. Simple velocity obstacles scale better than complex global optimization under packet loss constraints.",
-      techStack: ["ROS", "DroneKit", "ArduPilot", "YOLOv5", "C++", "Python", "Gazebo"],
-      problem: "In disaster areas, human rescue is bottlenecked by search times and hazardous environments. Single drones have limited battery and search area coverage, requiring a coordinated multi-agent system that functions without a single point of failure.",
-      solution: "Engineered a decentralized multi-UAV system where drones coordinate search grids using velocity obstacles for collision avoidance, and run on-board deep-learning localization models to detect survivors.",
-      challenges: "Eliminating dependency on constant global server communication. Solved by writing an on-board relative coordination node using MAVLink messages that runs asynchronously on the PX4 autopilot stack.",
-      futureWork: "Deploying physical swarms of 5+ drones using a distributed mesh network and experimenting with dynamic target assignment in high wind conditions.",
-      github: "https://github.com/mrunmayee-limaye/multi-uav-rescue",
-      video: "#video-placeholder",
-      publication: "#paper-placeholder",
-      diagramType: "swarm"
-    },
-    {
-      id: "exam-evaluation",
-      title: "Intelligent Examination Evaluation System",
-      subtitle: "Automated scoring and descriptive grading pipeline using OCR and LLMs.",
-      badges: ["Research", "Academic"],
-      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
+      id: "careflow-clinic",
+      title: "CareFlow Clinic Management System",
+      subtitle: "Full-stack clinic platform with role-based access control, normalized DB, and analytics.",
+      badges: ["Full Stack", "Database", "REST API"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
       status: "Completed",
-      duration: "Aug 2024 - Oct 2024",
-      role: "AI & Pipeline Engineer",
-      impact: "Attained 94% grading correlation against professional human evaluators on benchmark datasets.",
-      lessons: "OCR parsing errors heavily pollute embedding spaces. Adding a spelling corrector and structured prompt templates yields 20% higher grading reliability.",
-      techStack: ["LLMs", "OCR", "SBERT", "Python", "REST APIs"],
-      problem: "Grading descriptive academic answers is time-consuming and prone to human subjectivity. Standard text matching fails to reward conceptual accuracy expressed in different words.",
-      solution: "Developed an automated grading pipeline. Scanned answers are transcribed using PaddleOCR, mapped into a semantic space using SBERT vector embeddings to score conceptual coverage, and then evaluated for semantic depth using customized LLMs.",
-      challenges: "Correcting for bad handwriting and structural spacing. Overcame this by building a custom text-segmentation model that isolates individual sentences prior to feedforward extraction.",
-      futureWork: "Extending the scoring model to check mathematical equations and hand-drawn flowcharts/diagrams using multimodal vision models.",
-      github: "https://github.com/mrunmayee-limaye/intelligent-grading",
-      diagramType: "grading"
-    },
-    {
-      id: "agri-drone",
-      title: "Autonomous Agricultural Spraying Drone",
-      subtitle: "Target-specific dual spray crop protection using vision and flight controls.",
-      badges: ["Research", "Internship"],
-      image: "https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&w=600&q=80",
-      status: "Completed",
-      duration: "Dec 2024 - Jan 2025",
-      role: "Autonomous Systems Intern",
-      impact: "Reduced chemical usage by 40% in field testing through target-specific spray actuation.",
-      lessons: "Hardware latency in chemical valves must be calculated within the speed controllers; spraying early is better than spraying late due to forward drift.",
-      techStack: ["ROS", "YOLOv8", "ArduPilot", "MAVLink", "Python", "OpenCV"],
-      problem: "Traditional crop spraying is highly inefficient, wasting expensive chemicals on bare soil and creating significant environmental hazards.",
-      solution: "Built a vision-guided autonomous spray controller. Integrated a downward-facing camera feeding a local YOLO model to identify target crop boundaries and trigger localized dual spray valves.",
-      challenges: "Operating at low altitudes under heavy vibration. We resolved this by building a custom Kalman filter tracking crop positions dynamically, stabilizing target detection nodes.",
-      futureWork: "Integrating multi-spectral cameras to classify crop health (Nir/Red) and vary chemical dosages based on real-time health indexes.",
-      github: "https://github.com/mrunmayee-limaye/agri-drone-controller",
-      diagramType: "agri"
-    },
-    {
-      id: "guest-management",
-      title: "QR Guest Management System",
-      subtitle: "Production-ready check-in application with automated QR generation.",
-      badges: ["Industry", "Open Source"],
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
-      status: "Completed",
-      duration: "Jan 2024 - Mar 2024",
-      role: "Full Stack Developer",
-      impact: "Deploys on AWS with sub-50ms API endpoint latencies under concurrent user testing.",
-      lessons: "Stateless JWT authorization paired with Redis caching keeps database connections stable during peak registration events.",
-      techStack: ["React", "Express.js", "PostgreSQL", "Docker", "AWS", "JWT"],
-      problem: "Large scale events suffer from slow paper-based checking queues, entry tracking leaks, and slow host coordination.",
-      solution: "Engineered a secure web app that generates dynamic QR passes for guests upon registration, supporting live check-in scanning, role-based controls, and host notification hooks.",
-      challenges: "Preventing QR code duplication or theft. Solved by implementing timed TOTP-style hashes within the QR content that rotate every 60 seconds.",
-      futureWork: "Adding face-recognition check-in backup and multi-tenant sub-event organization.",
-      github: "https://github.com/mrunmayee-limaye/qr-guest-manager",
-      diagramType: "qr"
-    },
-    {
-      id: "sales-analytics",
-      title: "Northwind Sales Analytics Dashboard",
-      subtitle: "Business intelligence and pipeline visualization models on relational data.",
-      badges: ["Industry", "Data"],
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
-      status: "Completed",
-      duration: "Sep 2023 - Nov 2023",
-      role: "Data Analyst",
-      impact: "Identified $45k in supply bottlenecks and inventory overstock patterns through relational modeling.",
-      lessons: "Simple denormalized views and indexes speed up complex analytical subqueries by over 10x.",
-      techStack: ["SQL", "Python", "Pandas", "Matplotlib", "PowerBI"],
-      problem: "Raw transactional tables hide macro operational trends, customer churn signals, and region-specific logistics issues.",
-      solution: "Formulated aggregate SQL scripts, designed star-schema data models, and built interactive dashboards plotting customer lifetime value, shipping delays, and product margins.",
-      challenges: "Handling anomalous and missing values in legacy database fields. Addressed using Pandas parsing cleanups and SQL fallback triggers.",
-      futureWork: "Implementing automated predictive inventory forecasts using ARIMA statistical models in Python.",
-      github: "https://github.com/mrunmayee-limaye/northwind-analytics",
+      duration: "Apr 2026",
+      role: "Full-Stack Developer",
+      impact: "Designed a 10-table normalized database with PL/SQL triggers automating billing and scheduling workflows.",
+      lessons: "Database-level triggers and constraints maintain data integrity better than application layer checks alone.",
+      techStack: ["React.js", "Node.js", "Oracle SQL", "PL/SQL", "PostgreSQL", "REST APIs"],
+      problem: "Clinic operations suffer from scheduling collisions, manual paper billing, and lack of real-time patient history tracking.",
+      solution: "Engineered a web management system featuring 3 distinct user roles (Doctor, Patient, Admin), automated billing triggers, and revenue/workload analytics dashboards.",
+      challenges: "Ensuring atomic appointment scheduling under high concurrency. Solved by writing custom PL/SQL row-locking procedures.",
+      futureWork: "Adding automated SMS reminders and integrated telemedicine video calls.",
+      github: "https://github.com/MrunmayeeL/careflow-clinic-management",
       diagramType: "data"
     },
     {
-      id: "expense-tracker",
-      title: "CLI Expense Tracker",
-      subtitle: "High-performance command-line transactional tracker.",
-      badges: ["Open Source", "Academic"],
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+      id: "safe-apr-engine",
+      title: "SAFE: Structured Agentic Feedback Engine",
+      subtitle: "Multi-agent Automated Program Repair (APR) pipeline using AST analysis and LLMs.",
+      badges: ["AI Systems", "Python", "AST Parsing"],
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
       status: "Completed",
-      duration: "Apr 2023 - May 2023",
-      role: "Systems Programmer",
-      impact: "Processes sorting and categorical filtering of 10,000 transactions in under 2ms.",
-      lessons: "Manual pointer references and linked structures prevent memory fragmentation on micro-architectures compared to massive static arrays.",
-      techStack: ["C", "CLI", "Data Structures", "Pointers"],
-      problem: "High-level desktop applications require heavy frameworks and memory footprints just to track transaction Ledgers.",
-      solution: "Wrote a lightweight command-line interface tool in pure C. Leveraged dynamic memory allocation, binary search trees for fast category indexing, and file streams for ledger caching.",
-      challenges: "Preventing memory leaks during sorting operations. Solved by writing strict memory validation hooks and running the program through Valgrind debugger.",
-      futureWork: "Porting the engine to bare-metal microcontroller boards with an attached OLED display.",
-      github: "https://github.com/mrunmayee-limaye/cli-expense-tracker",
-      diagramType: "c-cli"
+      duration: "Mar 2026",
+      role: "Software Developer",
+      impact: "Achieved 100% syntactically valid patch generation while reducing patch size by 37% on QuixBugs benchmarks.",
+      lessons: "Abstract Syntax Tree (AST) validation prevents language model hallucinations from creating broken code syntax.",
+      techStack: ["Python", "AST Parsing", "LLMs", "Multi-Agent Systems", "PyTorch"],
+      problem: "Naïve LLM code generation often introduces syntax errors or changes unrelated lines of code when fixing bugs.",
+      solution: "Developed an automated program repair system combining AST-based localized code analysis with multi-agent verification to produce minimal, syntax-preserving patches.",
+      challenges: "Preserving existing code structure while patching logic flaws. Solved using AST node substitution.",
+      futureWork: "Expanding repair benchmarks to multi-file Java repos.",
+      github: "https://github.com/MrunmayeeL/SAFE-structured_agentic_feedback_engine",
+      diagramType: "grading"
+    },
+    {
+      id: "uav-search-rescue",
+      title: "Autonomous Multi-UAV Search & Rescue System",
+      subtitle: "Multi-agent coordination, spatial exploration, YOLO object detection, and payload delivery.",
+      badges: ["Systems", "Computer Vision", "MAVLink"],
+      image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=600&q=80",
+      status: "Completed",
+      duration: "Nov 2025 - Jan 2026",
+      role: "Robotics & Software Developer",
+      impact: "Achieved sub-1m target localization error across 20+ autonomous flight tests.",
+      lessons: "Decentralized state synchronization over wireless MAVLink avoids single-point-of-failure bottlenecks.",
+      techStack: ["Python", "OpenCV", "YOLOv5", "ArduPilot", "MAVLink", "DroneKit", "ROS"],
+      problem: "Single drones have limited battery life and coverage area when searching large disaster zones.",
+      solution: "Developed an autonomous multi-drone system with lawnmower grid search, real-time YOLO human detection, and automated GPS target localization for emergency relief payload delivery.",
+      challenges: "Maintaining accurate target GPS coordinates from camera pixel frames. Solved using camera calibration and geometric projection matrices.",
+      futureWork: "Integrating dynamic mesh networking for extended range.",
+      github: "https://github.com/HarshalKolhe02/Multiagent_Disaster_Rescue_Drones_NIDAR",
+      diagramType: "swarm"
+    },
+    {
+      id: "autograde-eval",
+      title: "AutoGrade: Intelligent Exam Evaluation System",
+      subtitle: "OCR transcription and semantic grading pipeline using PaddleOCR, EasyOCR, and SBERT.",
+      badges: ["AI / OCR", "Python", "NLP"],
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
+      status: "Completed",
+      duration: "Aug 2024 - Oct 2024",
+      role: "AI Pipeline Developer",
+      impact: "Evaluated 4,200+ handwritten student answers with question segmentation and semantic scoring.",
+      lessons: "Preprocessing scanned paper images dramatically increases OCR word recognition accuracy.",
+      techStack: ["Python", "PaddleOCR", "EasyOCR", "SBERT", "OpenCV", "PyTorch"],
+      problem: "Manual grading of handwritten descriptive student answer sheets is slow and subjective.",
+      solution: "Built a pipeline that crops answer regions, transcribes handwritten text using vision OCR models, and computes conceptual scoring using SBERT vector embeddings.",
+      challenges: "Handling varied handwriting styles and low-contrast scans. Solved with adaptive thresholding image preprocessing.",
+      futureWork: "Adding automatic mathematical equation parsing.",
+      github: "https://github.com/MrunmayeeL",
+      diagramType: "grading"
+    },
+    {
+      id: "qr-checkin-system",
+      title: "Real-Time QR Event Check-in System",
+      subtitle: "Full-stack event management with UUID credentials, QR scanning, and live Socket.IO dashboard.",
+      badges: ["Full Stack", "Web Development", "Socket.IO"],
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+      status: "Completed",
+      duration: "Jan 2024 - Mar 2024",
+      role: "Full-Stack Developer",
+      impact: "Streamlined event entry with sub-second QR pass scanning and real-time attendance sync across 6 pages.",
+      lessons: "WebSockets provide immediate live dashboard updates without client polling overhead.",
+      techStack: ["React.js", "Express.js", "Socket.IO", "PostgreSQL", "Node.js", "REST APIs"],
+      problem: "Paper guest lists at large events cause bottlenecks, queue delays, and untracked entry.",
+      solution: "Engineered a web application that generates digital QR passes sent via automated email, featuring real-time Socket.IO check-in status sync across multiple entrance scanners.",
+      challenges: "Handling rapid check-in scans simultaneously. Solved with optimistic UI updates and backend queue handling.",
+      futureWork: "Adding offline QR scanning sync.",
+      github: "https://github.com/MrunmayeeL",
+      diagramType: "qr"
     },
     {
       id: "gesture-robot",
-      title: "Gesture Controlled Robot",
-      subtitle: "Wireless spatial navigation controller using ESP32 and MPU6050.",
-      badges: ["Competition", "Open Source"],
+      title: "Gesture Controlled Omnidirectional Robot",
+      subtitle: "Wireless spatial navigation controller using ESP32, MPU6050 IMU, and ESP-NOW protocol.",
+      badges: ["Embedded Systems", "C++", "Hardware"],
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
       status: "Completed",
-      duration: "Oct 2023 - Dec 2023",
-      role: "Hardware & Control Lead",
-      impact: "Achieved sub-10ms wireless command transmission latency using ESP-NOW protocols.",
-      lessons: "Accelerometer raw data is highly noisy. Implementing a complementary filter combining gyroscope integration is essential for drift correction.",
-      techStack: ["ESP32", "MPU6050", "C++", "Embedded Systems", "ESP-NOW"],
-      problem: "Traditional joystick systems require dual-hand coordination, making steering difficult for operators carrying secondary payloads.",
-      solution: "Developed a glove-mounted controller utilizing an MPU6050 inertial measurement unit. The glove reads hand pitch/roll, calculates target steering vectors, and sends them wirelessly to the receiver chassis.",
-      challenges: "Correcting for hand tremor. Resolved by applying a rolling-average noise filter to the tilt angles, ensuring smooth drive outputs.",
-      futureWork: "Adding haptic feedback motors to the glove that vibrate as the chassis approaches obstacles.",
-      github: "https://github.com/mrunmayee-limaye/gesture-robot-esp32",
+      duration: "May 2024 - Oct 2024",
+      role: "Embedded Software Lead",
+      impact: "Presented at PCEMS 2024; achieved sub-10ms wireless command transmission latency.",
+      lessons: "Complementary filtering combining accelerometer and gyroscope signals eliminates sensor tilt drift.",
+      techStack: ["ESP32", "MPU6050", "C++", "ESP-NOW", "PWM Motor Control"],
+      problem: "Manual joystick controllers require two hands, restricting operator mobility in field environments.",
+      solution: "Developed a wearable glove controller reading hand inclination via an MPU6050 IMU, transmitting 10 wireless navigation commands to a 4-wheeled omnidirectional chassis.",
+      challenges: "Filtering hand jitter. Solved by implementing a rolling-average digital noise filter in C++.",
+      futureWork: "Adding haptic vibration feedback for obstacle proximity.",
+      github: "https://github.com/IvLabs/Summer-Projects/tree/main/Summer%202024/Gesture%20Controlled%20Omnidirectional%20Robot",
       diagramType: "embedded"
+    }
+  ];
+
+  const extraGithubProjects = [
+    {
+      name: "distributed-log-analyzer",
+      desc: "Java logging integration library parsing operational telemetry signals directly to AWS CloudWatch.",
+      link: "https://github.com/MrunmayeeL"
+    },
+    {
+      name: "mpu6050-filter",
+      desc: "Complementary tilt calculation and IMU noise filter implemented in C++ for ESP32.",
+      link: "https://github.com/MrunmayeeL"
+    },
+    {
+      name: "dec-uav-planner",
+      desc: "Standalone path-planning simulator implementing A* and RRT* algorithms in Python.",
+      link: "https://github.com/MrunmayeeL"
+    },
+    {
+      name: "sql-analytics-views",
+      desc: "Optimized relational database views and index schemas for Northwind dataset analysis.",
+      link: "https://github.com/MrunmayeeL"
+    },
+    {
+      name: "cli-expense-tracker",
+      desc: "Command-line transaction manager in C leveraging binary search trees for fast category indexing.",
+      link: "https://github.com/MrunmayeeL"
     }
   ];
 
@@ -155,14 +164,13 @@ function Project() {
   return (
     <section className="projects-section" id="projects">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
-        <p className="section-subtitle">Systems, software, and hardware built in labs, courses, and open source.</p>
+        <h2 className="section-title">Projects</h2>
+        <p className="section-subtitle">Software applications, database platforms, AI tools, and embedded systems.</p>
 
         <div className="projects-grid-new">
           {projects.map((proj) => (
             <div className="project-card-new paper-card" key={proj.id}>
               
-              {/* Cover Image */}
               <div className="proj-image-wrapper">
                 <img 
                   src={proj.image} 
@@ -172,7 +180,6 @@ function Project() {
                 <span className="proj-status-tag">{proj.status}</span>
               </div>
 
-              {/* Card Body */}
               <div className="proj-body">
                 <div className="proj-badges">
                   {proj.badges.map((b, idx) => (
@@ -193,7 +200,7 @@ function Project() {
                     className="btn-primary" 
                     onClick={() => handleOpenModal(proj, "overview")}
                   >
-                    <VisibilityIcon fontSize="small" /> Deep Dive
+                    <VisibilityIcon fontSize="small" /> Details
                   </button>
                   <button 
                     className="btn-secondary" 
@@ -208,36 +215,41 @@ function Project() {
           ))}
         </div>
 
-        {/* More Projects on GitHub */}
+        {/* More Projects on GitHub Block */}
         <div className="more-projects-block paper-card">
-          <h3>More Projects on GitHub</h3>
-          <p className="more-projects-subtitle">A collection of single-purpose scripts, utilities, and libraries.</p>
-          <div className="more-projects-list">
-            <a href="https://github.com/mrunmayee-limaye/distributed-log-analyzer" target="_blank" rel="noreferrer" className="more-proj-link">
-              <span><strong>distributed-log-analyzer</strong> — Java library parsing operational metrics to AWS CloudWatch.</span>
-              <span className="arrow-link">↗</span>
-            </a>
-            <a href="https://github.com/mrunmayee-limaye/mpu6050-filter" target="_blank" rel="noreferrer" className="more-proj-link">
-              <span><strong>mpu6050-filter</strong> — Complementary tilt calculation filter for ESP32 and MPU6050.</span>
-              <span className="arrow-link">↗</span>
-            </a>
-            <a href="https://github.com/mrunmayee-limaye/dec-uav-planner" target="_blank" rel="noreferrer" className="more-proj-link">
-              <span><strong>dec-uav-planner</strong> — Standalone A* and RRT* path-planning simulator in Python.</span>
-              <span className="arrow-link">↗</span>
-            </a>
-            <a href="https://github.com/mrunmayee-limaye/ocr-sentence-seg" target="_blank" rel="noreferrer" className="more-proj-link">
-              <span><strong>ocr-sentence-seg</strong> — Handwriting OCR segmenter utilizing PaddleOCR for text boundary analysis.</span>
-              <span className="arrow-link">↗</span>
-            </a>
-            <a href="https://github.com/mrunmayee-limaye/sql-analytics-views" target="_blank" rel="noreferrer" className="more-proj-link">
-              <span><strong>sql-analytics-views</strong> — Optimized relational views and index schemas for Northwind dataset.</span>
-              <span className="arrow-link">↗</span>
+          <div className="more-projects-header">
+            <div>
+              <h3>Explore All Repositories on GitHub</h3>
+              <p className="more-projects-subtitle">Utilities, libraries, standalone scripts, and course projects.</p>
+            </div>
+            <a 
+              href="https://github.com/MrunmayeeL" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn-secondary"
+            >
+              <GitHubIcon fontSize="small" /> GitHub Profile
             </a>
           </div>
+
+          <div className="more-projects-list">
+            {(showAllMoreProjects ? extraGithubProjects : extraGithubProjects.slice(0, 3)).map((item, idx) => (
+              <a href={item.link} target="_blank" rel="noreferrer" className="more-proj-link" key={idx}>
+                <span><strong>{item.name}</strong> — {item.desc}</span>
+                <span className="arrow-link">↗</span>
+              </a>
+            ))}
+          </div>
+
+          <button 
+            className="toggle-more-btn"
+            onClick={() => setShowAllMoreProjects(!showAllMoreProjects)}
+          >
+            {showAllMoreProjects ? "Show Less" : "Show All Projects"}
+          </button>
         </div>
       </div>
 
-      {/* Project Detail Modal */}
       <ProjectModal 
         project={selectedProject} 
         isOpen={modalOpen} 
@@ -257,6 +269,20 @@ function Project() {
           border-left: 4px solid var(--accent-primary) !important;
         }
 
+        .more-projects-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 16px;
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: 640px) {
+          .more-projects-header {
+            flex-direction: column;
+          }
+        }
+
         .more-projects-block h3 {
           font-size: 1.25rem;
           font-weight: 700;
@@ -267,7 +293,7 @@ function Project() {
         .more-projects-subtitle {
           font-size: 0.88rem;
           color: var(--text-secondary);
-          margin-bottom: 20px;
+          margin-bottom: 0;
         }
 
         .more-projects-list {
@@ -287,6 +313,7 @@ function Project() {
           color: var(--text-secondary) !important;
           transition: all 0.2s ease;
           background-color: rgba(255, 255, 255, 0.01);
+          text-decoration: none;
         }
 
         .more-proj-link strong {
@@ -304,6 +331,24 @@ function Project() {
         .arrow-link {
           font-weight: 700;
           color: var(--accent-primary);
+        }
+
+        .toggle-more-btn {
+          margin-top: 16px;
+          background: none;
+          border: 1px dashed var(--accent-primary);
+          color: var(--accent-primary);
+          padding: 8px 16px;
+          border-radius: 6px;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.82rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .toggle-more-btn:hover {
+          background-color: rgba(201, 108, 74, 0.08);
         }
 
         .projects-grid-new {
@@ -376,7 +421,7 @@ function Project() {
         }
 
         .proj-title {
-          font-size: 1.28rem;
+          font-size: 1.25rem;
           font-weight: 750;
           color: var(--text-primary);
           line-height: 1.3;
@@ -422,4 +467,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Project;
