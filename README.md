@@ -1,86 +1,96 @@
-# Developer Portfolio Template 🚀
+# Mrunmayee Limaye — Portfolio
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+Personal portfolio website showcasing my work across **software engineering, backend development, AI, computer vision, and autonomous systems**.
 
-## What is this?
+The portfolio brings together my professional experience, selected projects, technical skills, coursework, achievements, and areas I'm currently exploring.
 
-This simple portfolio template is designed to showcase your past projects, career history, skill sets, and more.
+## 🌐 Live Website
 
-View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
+**[mrunmayeel.github.io](https://mrunmayeel.github.io/Portfolio)**
 
-**This template is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
+## About
 
-![screenshot](./src/assets//images/screenshot.png)
+I'm a Computer Science and Engineering student at **Visvesvaraya National Institute of Technology (VNIT), Nagpur)**, interested in building software systems and intelligent technologies.
 
-## Features
+My work spans software engineering and backend development, while my background in robotics, computer vision, and autonomous systems continues to shape the way I approach engineering problems.
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+## Featured Areas
 
-## Quick Setup
+- Software Engineering & Backend Development
+- Java & Spring Boot
+- AI & Agentic Systems
+- Computer Vision
+- Autonomous & Intelligent Systems
+- Cloud & Development Tools
+- Embedded & Robotics Systems
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+## Experience
 
-    ```bash
-    node -v
-    ```
+### NatWest — Summer SDE Intern
+**May 2026 – July 2026**
 
-2. In the project directory, install dependencies:
+Worked in an enterprise software engineering environment involving Java, Spring Boot, AWS CloudWatch, GitLab, and JIRA.
 
-    ```bash
-    npm install
-    ```
+Investigated application observability in a Spring Boot microservice and implemented logging improvements that eliminated approximately **10,000 unnecessary log events per day**.
 
-3. Start the development server:
+## Selected Projects
 
-    ```bash
-    npm start
-    ```
+### Agentic Tool-Failure Recovery
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+Exploring how LLM-based agents can detect, classify, and recover from external tool failures using semantic validation and structured recovery strategies.
 
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
+### Autonomous Multi-UAV Search & Rescue
 
-The page will reload if you make edits, and you will see any lint errors in the console.
+Developing autonomous aerial systems combining perception, navigation, communication, and mission planning for search-and-rescue applications.
 
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
+### Context-Aware Navigation
 
-## Deployment
+Exploring perception, contextual information, and navigation strategies for intelligent autonomous systems.
 
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
+### Gesture-Controlled Omnidirectional Robot
 
-1. **Set Up GitHub Repository**
+Built an omnidirectional robot controlled through hand gestures, integrating embedded sensing, motion control, and real-time communication.
 
-    Create a new repository on GitHub for your portfolio app.
+### Northwind Sales Analysis
 
-2. **Configure `package.json`**
+Analyzed sales data using PostgreSQL and Python to explore product, customer, and sales trends through structured data analysis.
 
-    Edit the following properties in your `package.json` file:
+## Technology Stack
 
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
+**Languages**
 
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
+Java · Python · C++ · C · SQL · JavaScript
 
-3. **Deploy to GitHub Pages**
+**Backend & Web**
 
-    Run the following command to deploy your app:
+Spring Boot · REST APIs · FastAPI · Node.js · Express.js · React.js
 
-    ```bash
-    npm run deploy
-    ```
+**AI & Computer Vision**
 
-4. **Access Your Deployed App**
+PyTorch · OpenCV · YOLO · OCR · SBERT
 
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+**Databases**
+
+PostgreSQL · Oracle SQL · MySQL · MongoDB · Redis
+
+**Cloud & Tools**
+
+AWS CloudWatch · Docker · Git · GitLab CI/CD · JIRA · Linux · Postman
+
+**Embedded & Autonomous Systems**
+
+ESP32 · ROS · MAVLink · ArduPilot · DroneKit
+
+## Coursework
+
+Data Structures · Object-Oriented Programming · Operating Systems · Database Management Systems · Computer Networks · Computer Organisation · Program Analysis · System & Network Security
+
+## Connect
+
+- **GitHub:** [github.com/MrunmayeeL](https://github.com/MrunmayeeL)
+- **LinkedIn:** [linkedin.com/in/mrunmayee-limaye-49a28628](https://www.linkedin.com/in/mrunmayee-limaye-49a28628)
+- **Portfolio:** [mrunmayeel.github.io](https://mrunmayeel.github.io)
+
+---
+
+Built with React and TypeScript. Based on a portfolio template by **Yuji Satao**, with custom content, styling, and modifications.
