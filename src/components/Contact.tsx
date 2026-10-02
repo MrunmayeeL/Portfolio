@@ -14,7 +14,7 @@ function Contact() {
   const [messageError, setMessageError] = useState<boolean>(false);
   const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const isNameEmpty = name.trim() === '';
@@ -25,16 +25,39 @@ function Contact() {
     setEmailError(isEmailEmpty);
     setMessageError(isMessageEmpty);
 
-    if (!isNameEmpty && !isEmailEmpty && !isMessageEmpty) {
-      setSubmitSuccess(true);
-      const mailtoSubject = encodeURIComponent(`Portfolio Contact from ${name}`);
-      const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.open(`mailto:mrunmayee.limaye.01@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`, '_blank');
+    if (isNameEmpty || isEmailEmpty || isMessageEmpty) {
+      return;
+    }
 
-      setName('');
-      setEmail('');
-      setMessage('');
-      setTimeout(() => setSubmitSuccess(false), 5000);
+    try {
+      const response = await fetch("https://formspree.io/f/xyezqvyw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+
+        setName('');
+        setEmail('');
+        setMessage('');
+
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        console.error("Formspree submission failed.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
     }
   };
 

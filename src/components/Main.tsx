@@ -53,7 +53,7 @@ function Main() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, wordIndex, typingSpeed]);
 
-  const profilePicUrl = `${process.env.PUBLIC_URL}/profile-image.jpg`;
+  const profilePicUrl = `${process.env.PUBLIC_URL}/profile-image.webp`;
   const resumePdfUrl = `${process.env.PUBLIC_URL}/resume_short (1).pdf`;
 
   return (
