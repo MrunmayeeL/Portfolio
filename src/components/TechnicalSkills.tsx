@@ -71,16 +71,32 @@ function TechnicalSkills() {
       </div>
       <div className="coursework-section">
         <div className="coursework-header">
-          <h3>Coursework</h3>
-          <span>CS FOUNDATIONS</span>
+          <div>
+            <h3>Coursework</h3>
+            <p>CS FOUNDATIONS</p>
+          </div>
         </div>
 
-        <p className="coursework-list">
-          Data Structures · Object-Oriented Programming · Operating Systems ·Image processing · Language Processors
-          Database Management Systems · Computer Networks · Computer Organisation ·Digital Circuits and Microprocessors · Web Programming
-          Program Analysis · System & Network Security · Artificial Intelligence · Program analysis · Information Retreival · Quantum Computing · Neuro Fuzzy Techniques
-        </p>
-      </div>      
+        <div className="coursework-grid">
+          <div className="coursework-item">Data Structures</div>
+          <div className="coursework-item">Object-Oriented Programming</div>
+          <div className="coursework-item">Operating Systems</div>
+          <div className="coursework-item">Database Management Systems</div>
+          <div className="coursework-item">Computer Networks</div>
+          <div className="coursework-item">Computer Organisation</div>
+          <div className="coursework-item">Program Analysis</div>
+          <div className="coursework-item">System & Network Security</div>
+          <div className="coursework-item">Image processing</div>
+          <div className="coursework-item">Language Processors</div>
+          <div className="coursework-item">Digital Circuits and Microprocessors</div>
+          <div className="coursework-item">Web Programming</div>
+          <div className="coursework-item">Artificial Intelligence</div>
+          <div className="coursework-item">Information Retrieval</div>
+          <div className="coursework-item">Quantum Computing</div>
+          <div className="coursework-item">Neuro Fuzzy Techniques</div>
+          <div className="coursework-item">Compilers</div>
+        </div>
+      </div>         
 
       <style>{`
         .skills-section-new {
@@ -166,16 +182,12 @@ function TechnicalSkills() {
 
         .coursework-section {
           margin-top: 48px;
-          padding-top: 28px;
+          padding-top: 32px;
           border-top: 1px solid var(--border-color);
         }
 
         .coursework-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
-          margin-bottom: 16px;
+          margin-bottom: 20px;
         }
 
         .coursework-header h3 {
@@ -185,34 +197,46 @@ function TechnicalSkills() {
           color: var(--text-primary);
         }
 
-        .coursework-header span {
+        .coursework-header p {
+          margin: 6px 0 0;
           font-family: 'JetBrains Mono', monospace;
-          font-size: 0.72rem;
+          font-size: 0.7rem;
           font-weight: 600;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.06em;
           color: var(--text-secondary);
-          background: var(--card-bg);
-          border: 1px solid var(--border-color);
-          padding: 5px 9px;
-          border-radius: 5px;
         }
 
-        .coursework-list {
-          margin: 0;
+        .coursework-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 12px;
+        }
+
+        .coursework-item {
+          padding: 14px 16px;
+          border: 1px solid var(--border-color);
+          border-radius: 8px;
+          background: var(--card-bg);
           color: var(--text-secondary);
-          font-size: 0.95rem;
-          line-height: 1.8;
+          font-size: 0.88rem;
+          line-height: 1.4;
+          transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .coursework-item:hover {
+          border-color: var(--accent-color);
+          transform: translateY(-2px);
+        }
+
+        @media (max-width: 900px) {
+          .coursework-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
 
         @media (max-width: 600px) {
-          .coursework-header {
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 8px;
-          }
-
-          .coursework-list {
-            font-size: 0.9rem;
+          .coursework-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

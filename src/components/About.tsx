@@ -64,7 +64,7 @@ function About() {
               <div className="directive-item">
                 <span className="directive-num">04</span>
                 <div>
-                  <h5>Chase the Challenge</h5>
+                  <h5>Face the Failure</h5>
                   <p>The hardest problems often have the most to teach. Don't walk away from them, grow with them.</p>
                 </div>
               </div>

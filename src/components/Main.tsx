@@ -87,7 +87,7 @@ function Main() {
         <div className="hero-content">
           <div className="hero-top-badge">
             <span className="pulse-dot"></span>
-            <span>B.Tech CSE @ VNIT Nagpur (Open to Internships & Full-Time Opportunities)</span>
+            <span>B.Tech CSE @ VNIT Nagpur (Open to Semester Long Internships & Full-Time Opportunities)</span>
           </div>
           
           <h1 className="hero-name">Mrunmayee Limaye</h1>
