@@ -191,12 +191,12 @@ function ProjectModal({ project, isOpen, onClose, initialTab = "overview" }: Pro
           >
             Project Overview
           </button>
-          <button 
+          {/* <button 
             className={`modal-tab-btn ${activeTab === 'architecture' ? 'active' : ''}`}
             onClick={() => setActiveTab('architecture')}
           >
             System Architecture
-          </button>
+          </button> */}
         </div>
 
         {/* Modal Content Scrollable Area */}
@@ -251,27 +251,28 @@ function ProjectModal({ project, isOpen, onClose, initialTab = "overview" }: Pro
               </div>
 
             </div>
-          ) : (
-            <div className="architecture-tab-content">
-              <h4>System Blueprint Diagram</h4>
-              <div className="diagram-container">
-                {renderArchitectureDiagram()}
-              </div>
+          // ) : (
+          //   <div className="architecture-tab-content">
+          //     <h4>System Blueprint Diagram</h4>
+          //     <div className="diagram-container">
+          //       {renderArchitectureDiagram()}
+          //     </div>
 
-              <div className="architecture-desc-block">
-                <h4>Pipeline & Data Flow Overview</h4>
-                <p>
-                  The system relies on a pipelined architecture designed to process dynamic sensor feeds in real-time, compute optimal spatial trajectories or semantic scores, and forward actionable control signals directly to execution engines (hardware actuators, LLM frameworks, or relational tables).
-                </p>
-                <ul>
-                  <li><strong>Data Ingestion:</strong> Ingests inputs through microservice interfaces, hardware controllers, or sensors (camera streams, IMUs, file loaders).</li>
-                  <li><strong>Perception/Logic Layer:</strong> Performs semantic classification, vision detection (YOLO, OpenCV), or vector computation (SBERT, SQL grouping).</li>
-                  <li><strong>Optimization Loop:</strong> Feeds localized parameters into autonomous coordinators (RRT*, consensus algorithms, grading metrics).</li>
-                  <li><strong>Actuation/Persistence:</strong> Executes target directives via MAVLink actuators, Spring Boot web responses, or database updates.</li>
-                </ul>
-              </div>
-            </div>
-          )}
+          //     <div className="architecture-desc-block">
+          //       <h4>Pipeline & Data Flow Overview</h4>
+          //       <p>
+          //         The system relies on a pipelined architecture designed to process dynamic sensor feeds in real-time, compute optimal spatial trajectories or semantic scores, and forward actionable control signals directly to execution engines (hardware actuators, LLM frameworks, or relational tables).
+          //       </p>
+          //       <ul>
+          //         <li><strong>Data Ingestion:</strong> Ingests inputs through microservice interfaces, hardware controllers, or sensors (camera streams, IMUs, file loaders).</li>
+          //         <li><strong>Perception/Logic Layer:</strong> Performs semantic classification, vision detection (YOLO, OpenCV), or vector computation (SBERT, SQL grouping).</li>
+          //         <li><strong>Optimization Loop:</strong> Feeds localized parameters into autonomous coordinators (RRT*, consensus algorithms, grading metrics).</li>
+          //         <li><strong>Actuation/Persistence:</strong> Executes target directives via MAVLink actuators, Spring Boot web responses, or database updates.</li>
+          //       </ul>
+          //     </div>
+          //   </div>
+          // )
+          ):null }
         </div>
 
         {/* Modal Footer Links */}
