@@ -77,7 +77,7 @@ function Research() {
             </div>
           </div>
 
-          <div className="research-panel paper-card future-directions-panel">
+          {/* <div className="research-panel paper-card future-directions-panel">
             <h3>Future Directions</h3>
             <div className="directions-timeline">
               <div className="timeline-point">
@@ -104,7 +104,7 @@ function Research() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

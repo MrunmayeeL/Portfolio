@@ -56,7 +56,7 @@ function Contact() {
                 <span className="coord-icon"><RoomIcon fontSize="small"/></span>
                 <div>
                   <h5>Location</h5>
-                  <p>VNIT Nagpur, India</p>
+                  <p>Nagpur, India</p>
                 </div>
               </div>
               <div className="coord-item">
@@ -336,4 +336,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Contact;

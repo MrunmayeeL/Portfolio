@@ -8,25 +8,25 @@ function CurrentlyWorking() {
   const items = [
     {
       title: "Backend & Systems Development",
-      description: "Building production-ready backend services using Java, Spring Boot, PostgreSQL, and Oracle SQL with robust REST APIs.",
+      description: "Building backend services with Java, Spring Boot, SQL, and cloud tooling while learning how to design production ready systems that are scalable, reliable, and built to last.",
       icon: <StorageIcon fontSize="small"/>,
       tag: "SDE"
     },
     {
-      title: "Automated Program Repair & Agents",
-      description: "Developing AST-based code analysis pipelines and LLM agent frameworks for automated localized bug fixing.",
+      title: "AI & Agentic Systems",
+      description: "Exploring LLM-based agents, tool-use systems, and intelligent workflows — with a focus on agentic systems that can reason through tool failures, validate results, and recover when things don't go as planned.",
       icon: <CodeIcon fontSize="small"/>,
       tag: "Software AI"
     },
     {
-      title: "Computer Vision & OCR Pipelines",
-      description: "Engineering image processing and OCR pipelines (PaddleOCR, OpenCV, SBERT) for automated text and derivation evaluation.",
+      title: "Computer Vision & Perception",
+      description: "Working across human detection, image processing, OCR, and visual perception, from automated evaluation to navigation and path planning for autonomous systems.",
       icon: <VisibilityIcon fontSize="small"/>,
       tag: "Vision / AI"
     },
     {
       title: "Autonomous Systems & Controls",
-      description: "Working on telemetry communication and control software (MAVLink, Python, C++) for autonomous aerial platforms.",
+      description: "Building systems that combine perception, planning, and decision-making to automate complex real-world tasks and reduce the need for continuous human intervention.",
       icon: <AutoAwesomeIcon fontSize="small"/>,
       tag: "Systems"
     }

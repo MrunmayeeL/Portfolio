@@ -14,16 +14,16 @@ function Leadership() {
           <div className="leadership-main paper-card">
             <div className="lead-header">
               <PeopleOutlineIcon className="lead-icon" />
-              <h3>IvLabs Mentor</h3>
+              <h3>Student Mentor</h3>
             </div>
             <div className="lead-body">
               <p>
-                As a senior member of <strong>IvLabs</strong> (VNIT's Robotics & AI Lab), I mentor junior undergraduate students on software engineering fundamentals, embedded C++, and version control best practices.
+                Selected as a senior-student mentor serving as a role model and guide for a group of first-year undergraduate students, providing guidance on academics, opportunities, campus life, and navigating the transition into college.
               </p>
               <ul>
-                <li><strong>Technical Mentorship:</strong> Guiding junior students through software-hardware integration, C++ programming on microcontrollers, and Linux development setups.</li>
-                <li><strong>Version Control Standards:</strong> Established repository guidelines, modular code structure, and pull request review workflows to improve software maintainability across lab projects.</li>
-                <li><strong>Project Coordination:</strong> Assisting student teams in designing and testing custom embedded systems and autonomous platforms for national competitions.</li>
+                <li><strong>Mentorship:</strong> Serve as a trusted senior point of contact, guiding students through academics, campus life, extracurriculars, and opportunities available at VNIT.</li>
+                <li><strong>Career Guidance:</strong> Help mentees understand how to approach technical learning, projects, internships, and early career preparation through practical, experience-based guidance.</li>
+                <li><strong>Peer Development:</strong>Encourage mentees to explore beyond coursework, develop their interests, and make informed decisions about their college journey.</li>
               </ul>
             </div>
           </div>
@@ -36,7 +36,7 @@ function Leadership() {
             <div className="workshops-list">
               <div className="workshop-item">
                 <h5>First Year Class Representative (CR)</h5>
-                <p>Served as the primary liaison between 100+ first-year Computer Science students and department faculty, coordinating academic schedules, lab sessions, and student queries.</p>
+                <p>Served as the primary coordinator between 100+ first-year Computer Science students and department faculty, managing academic schedules, lab sessions, and student queries.</p>
                 <span className="ws-date">2023 - 2024</span>
               </div>
               <div className="workshop-item">

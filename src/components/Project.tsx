@@ -129,11 +129,6 @@ function Project() {
 
   const extraGithubProjects = [
     {
-      name: "distributed-log-analyzer",
-      desc: "Java logging integration library parsing operational telemetry signals directly to AWS CloudWatch.",
-      link: "https://github.com/MrunmayeeL"
-    },
-    {
       name: "mpu6050-filter",
       desc: "Complementary tilt calculation and IMU noise filter implemented in C++ for ESP32.",
       link: "https://github.com/MrunmayeeL"
@@ -467,4 +462,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Project;

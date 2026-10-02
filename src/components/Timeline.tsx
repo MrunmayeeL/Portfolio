@@ -26,6 +26,14 @@ function Timeline() {
       icon: <EngineeringIcon fontSize="small"/>
     },
     {
+      date: "CVIP 2026 (In Press)",
+      category: "publication",
+      title: "Handwritten Math Derivation Verification Paper",
+      subtitle: "11th CVIP Conference 2026",
+      description: "Co-authored visual-to-symbolic verification pipeline using multimodal LLMs for automated math grading (93.3% verdict accuracy).",
+      icon: <LibraryBooksIcon fontSize="small"/>
+    },
+    {
       date: "Apr 2026",
       category: "project",
       title: "CareFlow Clinic System",
@@ -42,11 +50,19 @@ function Timeline() {
       icon: <ScienceIcon fontSize="small"/>
     },
     {
-      date: "CVIP 2026 (In Press)",
+      date: "Jan 2026",
+      category: "award",
+      title: "NIDAR",
+      subtitle: "National Innovation Challenge for Drone Application and Research",
+      description: "Contributed to NIDARs autonomous systems initiatives, working on UAVs, computer vision, and intelligent automation; the team received the Ignite Prize at the National Innovation Drone Challenge.",
+      icon: <LibraryBooksIcon fontSize="small"/>
+    },
+    {
+      date: "Dec 2025",
       category: "publication",
-      title: "Handwritten Math Derivation Verification Paper",
-      subtitle: "11th CVIP Conference 2026",
-      description: "Co-authored visual-to-symbolic verification pipeline using multimodal LLMs for automated math grading (93.3% verdict accuracy).",
+      title: "LLM UAV Mission Planning Paper",
+      subtitle: "IEEE BigData 2025 (Macau, China)",
+      description: "Published paper on schema-constrained mission generation from free-form natural language instructions using LLMs.",
       icon: <LibraryBooksIcon fontSize="small"/>
     },
     {
@@ -56,14 +72,6 @@ function Timeline() {
       subtitle: "IIT Roorkee",
       description: "Built 200 Hz data pipeline and deployed reinforcement learning policies for quadcopter payload stabilization.",
       icon: <EngineeringIcon fontSize="small"/>
-    },
-    {
-      date: "Dec 2025",
-      category: "publication",
-      title: "LLM UAV Mission Planning Paper",
-      subtitle: "IEEE BigData 2025 (Macau, China)",
-      description: "Published paper on schema-constrained mission generation from free-form natural language instructions using LLMs.",
-      icon: <LibraryBooksIcon fontSize="small"/>
     },
     {
       date: "May 2024 - Oct 2024",
@@ -322,4 +330,4 @@ function Timeline() {
   );
 }
 
-export default Timeline;
+export default Timeline;
