@@ -197,12 +197,12 @@ function Project() {
                   >
                     <VisibilityIcon fontSize="small" /> Details
                   </button>
-                  <button 
+                  {/* <button 
                     className="btn-secondary" 
                     onClick={() => handleOpenModal(proj, "architecture")}
                   >
                     <HubIcon fontSize="small" /> Architecture
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
