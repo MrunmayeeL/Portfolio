@@ -138,7 +138,7 @@ function App() {
           <About />
           <CurrentlyWorking />
           <Experience />
-          <Research />
+          {/* <Research /> */}
           <Project />
           <Publications />
           <TechnicalSkills />

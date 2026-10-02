@@ -16,7 +16,7 @@ const rawNavItems: Array<[string, string] | null> = [
   ['Home', 'hero'],
   ['About', 'about'],
   ['Experience', 'experience'],
-  ['Research', 'research'],
+  // ['Research', 'research'],
   ['Projects', 'projects'],
   ['Publications', 'publications'],
   ['Skills', 'skills'],
