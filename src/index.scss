@@ -98,7 +98,7 @@ p, a, h1, h2, h3, h4, h5, label, button, span {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 24px;
+  padding: 40px 24px;
   position: relative;
   z-index: 2;
 }
@@ -299,7 +299,7 @@ p, a, h1, h2, h3, h4, h5, label, button, span {
 /* Responsive adjust */
 @media (max-width: 768px) {
   .container {
-    padding: 40px 16px;
+    padding: 30px 16px;
   }
   .section-title {
     font-size: 1.8rem;

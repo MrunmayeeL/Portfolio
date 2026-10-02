@@ -180,30 +180,13 @@ function TechnicalSkills() {
           background-color: rgba(201, 108, 74, 0.02);
         }
 
+        /* Coursework - match Skills card */
         .coursework-section {
           margin-top: 48px;
-          padding-top: 32px;
-          border-top: 1px solid var(--border-color);
-        }
-
-        .coursework-header {
-          margin-bottom: 20px;
-        }
-
-        .coursework-header h3 {
-          margin: 0;
-          font-size: 1.15rem;
-          font-weight: 700;
-          color: var(--text-primary);
-        }
-
-        .coursework-header p {
-          margin: 6px 0 0;
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 0.7rem;
-          font-weight: 600;
-          letter-spacing: 0.06em;
-          color: var(--text-secondary);
+          padding: 28px 32px;
+          border: 1px solid var(--border-color);
+          border-radius: 12px;
+          background: var(--card-bg);
         }
 
         .coursework-grid {
@@ -224,7 +207,7 @@ function TechnicalSkills() {
         }
 
         .coursework-item:hover {
-          border-color: var(--accent-color);
+          border-color: var(--accent-primary);
           transform: translateY(-2px);
         }
 
@@ -235,6 +218,10 @@ function TechnicalSkills() {
         }
 
         @media (max-width: 600px) {
+          .coursework-section {
+            padding: 24px 20px;
+          }
+
           .coursework-grid {
             grid-template-columns: 1fr;
           }
