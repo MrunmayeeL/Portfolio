@@ -69,6 +69,18 @@ function TechnicalSkills() {
           ))}
         </div>
       </div>
+      <div className="coursework-section">
+        <div className="coursework-header">
+          <h3>Coursework</h3>
+          <span>CS FOUNDATIONS</span>
+        </div>
+
+        <p className="coursework-list">
+          Data Structures · Object-Oriented Programming · Operating Systems ·Image processing · Language Processors
+          Database Management Systems · Computer Networks · Computer Organisation ·Digital Circuits and Microprocessors · Web Programming
+          Program Analysis · System & Network Security · Artificial Intelligence · Program analysis · Information Retreival · Quantum Computing · Neuro Fuzzy Techniques
+        </p>
+      </div>      
 
       <style>{`
         .skills-section-new {
@@ -150,6 +162,58 @@ function TechnicalSkills() {
           border-color: var(--accent-primary);
           color: var(--text-primary);
           background-color: rgba(201, 108, 74, 0.02);
+        }
+
+        .coursework-section {
+          margin-top: 48px;
+          padding-top: 28px;
+          border-top: 1px solid var(--border-color);
+        }
+
+        .coursework-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+
+        .coursework-header h3 {
+          margin: 0;
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+
+        .coursework-header span {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          color: var(--text-secondary);
+          background: var(--card-bg);
+          border: 1px solid var(--border-color);
+          padding: 5px 9px;
+          border-radius: 5px;
+        }
+
+        .coursework-list {
+          margin: 0;
+          color: var(--text-secondary);
+          font-size: 0.95rem;
+          line-height: 1.8;
+        }
+
+        @media (max-width: 600px) {
+          .coursework-header {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .coursework-list {
+            font-size: 0.9rem;
+          }
         }
       `}</style>
     </section>
